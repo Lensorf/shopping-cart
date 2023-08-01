@@ -1,0 +1,855 @@
+/* ------ Обнуление стилей для body и т.д ------ */
+
+body {
+    margin: 0px;
+}
+
+/* Reset and base styles  */
+* {
+    padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+/* ----- Конец обнуления стилей ----- */
+
+@media (min-width: 1400px) {
+    body {
+        width: 1400px;
+        /* height: 2045px; */
+    }
+
+    /* ----------------------- header ----------------------- */
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+        background: var(--system-violet, #6725A8);
+        width: 1400px;
+        height: 112px;
+    }
+
+    /* ----- Burger and Logo ----- */
+
+    .BurgerAndLogo {
+        display: flex;
+        padding: 16px 3px 16px 24px;
+        align-items: center;
+        gap: 32px;
+        align-self: stretch;
+    }
+
+    .blockBurger{
+        display: flex;
+        width: 170px;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .buttonBurger {
+        display: flex;
+        padding: 12px 10px;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: transparent;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .blockHeaderText {
+        display: flex;
+        width: 106px;
+        padding: 1px 0px 7px 0px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .TextLogo {
+        width: 106px;
+        flex-shrink: 0;
+        color: var(--system-white, #FFF);
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; /* 85.714% */
+        font-variant: all-small-caps;
+        letter-spacing: 0.56px;
+    }
+
+    /* ----- Конец блока Burger and Logo ----- */
+
+    /* ----- Блок Search ----- */
+
+    .BlockInput {
+        display: flex;
+        height: 48px;
+        padding: 0px 20px;
+        align-items: center;
+        flex: 1 0 0;
+        border-radius: 36px;
+        background: rgba(255, 255, 255, 0.20);
+    }
+
+    .BlockUnderInput{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+
+    .BlockSearch {
+        display: flex;
+        padding-bottom: 0px;
+        align-items: center;
+        gap: 4px;
+        flex: 1 0 0;
+    }
+    
+    .InputSearch {
+        width: 898px;
+    }
+
+    .InputSearch {
+        color: var(--system-white, #FFF);
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 133.333% */
+    }
+
+    .InputSearch::-webkit-input-placeholder {
+        opacity: 0.4000000059604645;
+        color: var(--system-white, #FFF);
+    }
+
+    .imgSearch {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* ----- Конец блока search ----- */
+
+    /* ----- Блок icons ----- */
+
+    .BlockIcons {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 40px;
+        align-self: stretch;
+        padding-right: 17px;
+    }
+
+    .Profile {
+        display: flex;
+        width: 56px;
+        padding-bottom: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        align-self: stretch;
+    }
+
+    .firstBlockProfile {
+        height: 30px;
+        align-self: stretch;
+    }
+    
+    .SecondBlockProfile {
+        width: 56px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .ThirdBlockProfile {
+        width: 56px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .ProfileInside {
+        display: flex;
+        width: 56px;
+        height: 30px;
+        padding: 1px 13px 1px 15px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .ProfileIcon {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    .Basket {
+        display: flex;
+        padding-bottom: 3px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        align-self: stretch;
+    }
+
+    .BlockBasket {
+        width: 56px;
+        height: 30px;
+    }
+
+    .BasketIcon {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+    
+    .LabelBasket {
+        display: inline-flex;
+        height: 16px;
+        transform: rotate(0.074deg);
+        padding: 0px 2px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: var(--system-red, #F55123);
+    }
+
+    .BlockLableBasket {
+        display: flex;
+        width: 12px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .TextLabelBasket {
+        width: 12px;
+        color: var(--system-white, #FFF);
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px; /* 180% */
+    }
+
+    .TextIcon {
+        color: var(--system-white, #FFF);
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    /* ----- Конец блока .BlockIcons ----- */
+
+    /* ----- Блок округление из макета -----  */
+
+    .rounding {
+        width: 1400px;
+        height: 24px;
+        border-radius: 24px 24px 0px 0px;
+        background: #FFF;
+    }
+
+    /* ----- Конец блока округление ----- */
+
+    /* ----------------------- Конец header ------------------------- */
+
+    /* ------------------------ Начало секции BODY то есть тело корзины  --------------------------*/
+
+    .SectionBody {
+        display: flex;
+        padding: 0px 24px 16px 24px;
+        align-items: flex-start;
+        gap: 32px;
+        align-self: stretch;
+        width: 1352px;
+        height: 1809px;
+    }
+
+    /* ----- Первый блок слево ----- */
+
+    .FirstBasketBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 27px;
+        flex: 1 0 0;
+    }
+
+    .H1Basket {
+        color: var(--text-black, #000);
+        /* Сайт/H1 */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px; /* 128.571% */
+        letter-spacing: -0.28px;
+    }
+
+    /* ----- Первый блок внутри блока слева ----- */
+
+    .InsideFirstBasketBlock {
+        display: flex;
+        width: 891px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .FirstInsideBasketBlock {
+        display: flex;
+        width: 891px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    /* ----- Шапка блока и чекбокс как в макете выбрать всё ----- */
+
+    .AllCheckbox {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        align-self: stretch;
+    }
+
+    .TextCheckBox {
+        display: flex;
+        height: 24px;
+        padding-bottom: 5px;
+        align-items: center;
+        gap: 8px;
+        flex: 1 0 0;
+        color: var(--text-black, #000);
+        /* Сайт/Body */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+
+    /* ----- Конец блока с чекбоксом выбрать всё ----- */
+
+    /* ----- Блок который по макту под чекбоксом и выбрать всё с инфорамацией о заказе ----- */
+    
+    .BlockInfoSale {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+    }
+
+    .FirstInfoSaleBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+
+    .FirstInfoLeftBlock {
+        display: flex;
+        width: 397px;
+        padding-top: 12px;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .BlockCheckImg {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .BlockTextFirst {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+
+    .FirstTitleSale {
+        align-self: stretch;
+        color: var(--text-black, #000);
+        /* Сайт/Body */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+
+    .spanBlock {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .SpanText {
+        color: var(--text-black, #000);
+        /* Сайт/Caption */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    .SecondSpanBlock{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        align-self: stretch;
+    }
+
+    .InsideFirstSpanBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .FirstInsideSpan {
+        color: var(--system-gray, #A0A0A4);
+        /* Сайт/Caption */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    .InsideSecondSpanBlock{
+        display: flex;
+        height: 16px;
+        align-items: center;
+        gap: 6px;
+        align-self: stretch;
+    }
+    
+    .SecondInsideSpan {
+        color: var(--system-gray, #A0A0A4);
+        /* Сайт/Caption */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    .SecondInfoLeftBlock {
+        display: flex;
+        width: 226px;
+        padding-top: 9px;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .FirstInfoRigthBlock {
+        display: flex;
+        padding-top: 3px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .BlockButtonSale {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 44px;
+        border-radius: 8px;
+        background: var(--background-white, #FFF);
+    }
+
+    .BlockSpanResult {
+        display: flex;
+        width: 44px;
+        height: 23px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .SpanResultQuantity {
+        display: flex;
+        width: 44px;
+        height: 23px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--text-black, #000);
+        text-align: center;
+        /* Сайт/Текст */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+
+    .BlockButtonPlus {
+        display: flex;
+        width: 24px;
+        padding: 2px 7px 6px 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ButtonPlus {
+        display: flex;
+        width: 9px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--text-black, #000);
+        text-align: center;
+        /* Сайт/Lead */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 120% */
+        letter-spacing: -0.2px;
+    }
+
+    .BlockButtonMinus {
+        display: flex;
+        width: 24px;
+        padding: 2px 7px 6px 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ButtonMinus {
+        display: flex;
+        width: 9px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--rulers-rulers-input, rgba(0, 0, 0, 0.20));
+        text-align: center;
+        /* Сайт/Lead */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 120% */
+        letter-spacing: -0.2px;
+    }
+
+    .RemainedSpan {
+        width: 100px;
+        color: var(--dark-system-coral, #FF3B30);
+        /* Сайт/Caption */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    .LikeAndDeleteIcons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .SecondInfoRigthBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+        flex: 1 0 0;
+        align-self: stretch;
+    }
+    
+    .BlockPrice {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .PriceSpanNumbers {
+        margin: 0px 5px;
+        color: var(--text-black, #000);
+        text-align: right;
+        /* Сайт/H3 */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px; /* 140% */
+        letter-spacing: -0.2px;
+    }
+
+    .PriceSpanCurrency {
+        color: var(--text-black, #000);
+        text-align: right;
+        /* Сайт/H4 */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+    }
+
+    .PreviousPrice {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+        gap: 1px;
+    }
+
+    .PreviousPriceSpan {
+        color: var(--system-gray, #A0A0A4);
+        /* Сайт/Caption */
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+    }
+
+    .LineStrike {
+        position: absolute;
+        bottom: 7px;
+        width: 55px;
+        stroke-width: 1px;
+        stroke: var(--system-gray, #A0A0A4);
+    }
+
+    .LineDown {
+        align-self: stretch;
+        stroke-width: 1px;
+        stroke: var(--rulers-rulers-input, rgba(0, 0, 0, 0.20));
+    }
+
+    .vectorLine {
+        width: 891px;
+        height: 1px;
+        position: absolute;
+        fill: var(--rulers-rulers, rgba(0, 0, 0, 0.10));
+    }
+
+    /* ----- Конец первого блока внутри левого ----- */
+
+    .SecondInfoSaleBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+
+    .ThirdInfoSaleBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+
+    /* ----- Конец блока с информацией о заказе ----- */
+
+    .SecondInsideBasketBlock {
+        display: flex;
+        width: 891px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .ThirdInsideBasketBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+
+    .SecondBasketBlock {
+        display: flex;
+        width: 429px;
+        padding-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+    }
+
+        /* ------------------------ Конец секции BODY то есть тело корзины  --------------------------*/
+
+        /* ------------------------ Блок footer начало ------------------------ */
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            background: var(--system-violet, #6725A8);
+            width: 1400px;
+            height: 111px;
+        }
+
+        .roundingBottom {
+            transform: rotate(180deg);
+            height: 24px;
+            align-self: stretch;
+            border-radius: 24px 24px 0px 0px;
+            background: #FFF;
+        }
+
+        .FooterBlock {
+            display: flex;
+            padding: 24px;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            align-self: stretch;
+        }
+        
+        .InsideFooterBlock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            align-self: stretch;
+        }
+
+        .TextFooterBlock {
+            align-self: stretch;
+            color: rgba(255, 255, 255, 0.70);
+            text-align: center;
+            /* Сайт/Caption */
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; /* 123.077% */
+        }
+
+        /* ------------------------ Блок footer конец ------------------------ */
+
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 1023px) {
+
+}
