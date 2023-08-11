@@ -1623,6 +1623,11 @@ legend {
         line-height: 24px; /* 150% */
     }
 
+    .SpanNumberKolVo:disabled {
+        color: var(--rulers-rulers-input, rgba(0, 0, 0, 0.20));
+        cursor: default;
+    }
+
     .BlockPlusBlock {
         display: flex;
         width: 24px;
@@ -4743,6 +4748,11 @@ legend {
         margin: 0px 0px 0px -1px;
     }
 
+    .SpanNumberKolVo:disabled {
+        color: var(--rulers-rulers-input, rgba(0, 0, 0, 0.20));
+        cursor: default;
+    }
+
     .BlockPlusBlock {
         display: flex;
         width: 24px;
@@ -7658,6 +7668,11 @@ legend {
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 14px;
         line-height: 20px; /* 142.857% */
+    }
+
+    .SpanNumberKolVo:disabled {
+        color: var(--rulers-rulers-input, rgba(0, 0, 0, 0.20));
+        cursor: default;
     }
 
     .BlockPlusBlock {

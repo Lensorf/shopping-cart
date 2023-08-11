@@ -71,6 +71,7 @@ const lableDown = document.querySelectorAll('.LastLabelImageDelivery');
 const blockNoneChange = document.querySelectorAll('.blockNoneChange');
 const spanButtonZakaz = document.querySelector('.TextButtonZakaz2');
 const spanNonDisplay = document.querySelectorAll('.SpanResultNonSkidka2NonDisplay');
+// const blocksDisabledCommon = document.querySelectorAll('.BlockSumContent');
 
 // Количество штук
 const firstQuantity = document.querySelector('.SpanNumberKolVo1');
@@ -151,9 +152,23 @@ localStorage.setItem('secondQuantitySum', secondQuantitySum);
 localStorage.setItem('thirdQuantitySum', thirdQuantitySum);
 localStorage.setItem('allQuantity', allQuantity);
 // Сумма скидки
-let resultSumDiscount = (SumDiscount.innerHTML.split(' ')[0].split('').slice(1).join('')) + (SumDiscount.innerHTML.split(' ')[1]);
+let resultSumDiscount = (sumNonDiscount - sumResultTotal);
 resultSumDiscount = `−${Number(resultSumDiscount)}`;
 localStorage.setItem('resultSumDiscount', resultSumDiscount);
+// // Цена за штуку со скидкой
+// const costOnePieceFirst = Math.trunc(firstSum / firstQuantitySum);
+// const costOnePieceSecond = Math.trunc(secondSum / secondQuantitySum);
+// const costOnePieceThird = Math.trunc(thirdSum / thirdQuantitySum);
+// localStorage.setItem('costOnePieceFirst', costOnePieceFirst);
+// localStorage.setItem('costOnePieceSecond', costOnePieceSecond);
+// localStorage.setItem('costOnePieceThird', costOnePieceThird);
+// // Цена за одну штуку без скидки
+// const costOnePieceNonSkidkaFirst = Math.trunc(FirstPriceNonDiscount / firstQuantitySum);
+// const costOnePieceNonSkidkaSecond = Math.trunc(SecondPriceNonDiscount / secondQuantitySum);
+// const costOnePieceNonSkidkaThird = Math.trunc(ThirdPriceNonDiscount / thirdQuantitySum);
+// localStorage.setItem('costOnePieceNonSkidkaFirst', costOnePieceNonSkidkaFirst);
+// localStorage.setItem('costOnePieceNonSkidkaSecond', costOnePieceNonSkidkaSecond);
+// localStorage.setItem('costOnePieceNonSkidkaThird', costOnePieceNonSkidkaThird);
 
 console.log(localStorage);
 
@@ -547,6 +562,7 @@ for (let i = 0; i < allPlus.length; i++) {
           const Quantity = [Number(localStorage.firstQuantitySum), Number(localStorage.secondQuantitySum), Number(localStorage.thirdQuantitySum)].reduce((a, b) => a + b);
           localStorage.allQuantity = Quantity;
           const kolVo = `${Quantity} товара`;
+          QuantityProduct.innerText = kolVo;
           // Актуальная цена со скидкой
           let resultSum = [Number(localStorage.firstSum), Number(localStorage.secondSum), Number(localStorage.thirdSum)].reduce((a, b) => a + b);
           localStorage.sumResultTotal = resultSum;
@@ -573,30 +589,16 @@ for (let i = 0; i < allPlus.length; i++) {
             PieceFirstMobile.style.fontSize = '14px';
           }
 
-          if (firstCheckBox.checked) {
-            QuantityProduct.innerText = kolVo;
-            spanButtonZakaz.innerHTML = `Оплатить ${resultSum} сом`;
-            SumProduct.innerHTML = resultNonDiscount;
-            resultTotal.innerHTML = resultSum;
-            SumDiscount.innerHTML = skidka;
-          }
-
-          if (!firstCheckBox.checked) {
-            console.log(localStorage);
-            // localStorage.firstQuantitySum = allInputs[i].value;
-            // localStorage.allQuantity = Quantity;
-            // localStorage.firstSum = sumResultCost;
-            // localStorage.FirstPriceNonDiscount = sumResultNonSkidkaCost;
-            // localStorage.sumResultTotal = resultSum;
-            // localStorage.sumNonDiscount = resultNonDiscount;
-            // localStorage.resultSumDiscount = `${skidka}`;
-          }
           onePieceFirst.innerHTML = `${sumResultCost}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
           PieceFirstMobile.innerText = `${sumResultCost}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
           FirstPriceWithoutDiscount.innerHTML = `${sumResultNonSkidkaCost}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
           for (let j = 0; j < firstPriceMobile.length; j++) {
             firstPriceMobile[j].innerHTML = `${`${sumResultNonSkidkaCost}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
           }
+          spanButtonZakaz.innerHTML = `Оплатить ${resultSum} сом`;
+          SumProduct.innerHTML = resultNonDiscount;
+          resultTotal.innerHTML = resultSum;
+          SumDiscount.innerHTML = skidka;
 
           allPlus[i].setAttribute('disabled', 'true');
           allMinus[i].removeAttribute('disabled');
@@ -1408,7 +1410,6 @@ for (let i = 0; i < allInputs.length; i++) {
         const Quantity = [Number(allInputs[i].value), Number(localStorage.secondQuantitySum), Number(localStorage.firstQuantitySum)].reduce((a, b) => a + b);
         localStorage.allQuantity = Quantity;
         const kolVo = `${Quantity} товара`;
-        QuantityProduct.innerText = kolVo;
 
         // Актуальная цена со скидкой
         let resultSum = [Number(localStorage.firstSum), Number(localStorage.secondSum), Number(localStorage.thirdSum)].reduce((a, b) => a + b);
@@ -1442,6 +1443,7 @@ for (let i = 0; i < allInputs.length; i++) {
         for (let j = 0; j < thirdPriceMobile.length; j++) {
           thirdPriceMobile[j].innerHTML = `${`${sumResultNonSkidkaCost}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1')}`;
         }
+        QuantityProduct.innerText = kolVo;
         spanButtonZakaz.innerHTML = `Оплатить ${resultSum} сом`;
         SumProduct.innerHTML = resultNonDiscount;
         resultTotal.innerHTML = resultSum;
@@ -1458,70 +1460,220 @@ for (let i = 0; i < allInputs.length; i++) {
 // Чекбокс
 for (let i = 0; i < CheckBoxes.length; i++) {
   CheckBoxes[i].addEventListener('click', async (e) => {
+    const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
+    mainCheckbox.checked = checkedCount === 3;
     let { id } = e.target;
     id = id.replace('FirstCheckBox', '');
     if (id === '1') {
       if (CheckBoxes[i].checked) {
-        const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
-        mainCheckbox.checked = checkedCount === 3;
         mainCheckbox.indeterminate = checkedCount > 0 && checkedCount < CheckBoxes.length;
-        const SpanNumberKolVo1 = document.querySelector('#SpanNumberKolVo1').value;
-        const SpanResultSumNoMobile1 = document.querySelector('#SpanResultSumNoMobile1');
-        const SpanResultNonSkidka1Mobile = document.querySelector('#SpanResultNonSkidka1Mobile');
-        const obj = {
-          key: 1,
-        };
-        console.log(SpanResultNonSkidka1Mobile);
+        const SpanNumberKolVo1 = Number(firstQuantity.value);
+        const SpanResultSumNoMobile1 = Number(document.querySelector('#SpanResultSumNoMobile1').innerHTML?.split(' ')?.join(''));
+        const SpanResultNonSkidka1Mobile = Number(document.querySelector('#SpanResultNonSkidka1Mobile').innerHTML?.split(' ').join(''));
+        localStorage.firstQuantitySum = SpanNumberKolVo1;
+        localStorage.firstSum = SpanResultSumNoMobile1;
+        localStorage.FirstPriceNonDiscount = SpanResultNonSkidka1Mobile;
+        localStorage.sumResultTotal = Number(localStorage.sumResultTotal) + Number(localStorage.firstSum);
+        localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) + Number(localStorage.FirstPriceNonDiscount);
+        localStorage.allQuantity = Number(localStorage.allQuantity) + Number(localStorage.firstQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${localStorage.allQuantity} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        allPlus[i].removeAttribute('disabled');
+        allInputs[i].removeAttribute('disabled');
+        allMinus[i].removeAttribute('disabled');
+      } else {
+        localStorage.sumResultTotal -= Number(localStorage.firstSum);
+        localStorage.sumNonDiscount -= Number(localStorage.FirstPriceNonDiscount);
+        localStorage.allQuantity -= Number(localStorage.firstQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${localStorage.allQuantity} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        localStorage.firstQuantitySum = 0;
+        localStorage.FirstPriceNonDiscount = 0;
+        localStorage.firstSum = 0;
+        allPlus[i].setAttribute('disabled', 'true');
+        allInputs[i].setAttribute('disabled', 'true');
+        allMinus[i].setAttribute('disabled', 'true');
       }
     }
     if (id === '2') {
       if (CheckBoxes[i].checked) {
-        const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
-        mainCheckbox.checked = checkedCount === 3;
         mainCheckbox.indeterminate = checkedCount > 0 && checkedCount < CheckBoxes.length;
-        const SpanNumberKolVo2 = document.querySelector('#SpanNumberKolVo2').value;
-        const SpanResultSumNoMobile2 = document.querySelector('#SpanResultSumNoMobile2');
-        const SpanResultNonSkidka2Mobile = document.querySelector('#SpanResultNonSkidka2Mobile');
-        console.log(SpanResultNonSkidka2Mobile);
+        const SpanNumberKolVo2 = Number(secondQuantity.value);
+        const SpanResultSumNoMobile2 = Number(document.querySelector('#SpanResultSumNoMobile2').innerHTML?.split(' ')?.join(''));
+        const SecondPriceWithoutDiscount2 = Number(document.querySelector('.SpanResultNonSkidkaResultSecond').innerHTML?.split(' ')?.join(''));
+        localStorage.secondQuantitySum = SpanNumberKolVo2;
+        localStorage.secondSum = SpanResultSumNoMobile2;
+        localStorage.SecondPriceNonDiscount = SecondPriceWithoutDiscount2;
+        localStorage.sumResultTotal = Number(localStorage.sumResultTotal) + Number(localStorage.secondSum);
+        localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) + Number(localStorage.SecondPriceNonDiscount);
+        localStorage.allQuantity = Number(localStorage.allQuantity) + Number(localStorage.secondQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${(localStorage.allQuantity).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        allPlus[i].removeAttribute('disabled');
+        allInputs[i].removeAttribute('disabled');
+        allMinus[i].removeAttribute('disabled');
+      } else {
+        localStorage.sumResultTotal -= Number(localStorage.secondSum);
+        localStorage.sumNonDiscount -= Number(localStorage.SecondPriceNonDiscount);
+        localStorage.allQuantity -= Number(localStorage.secondQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${localStorage.allQuantity} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        localStorage.secondQuantitySum = 0;
+        localStorage.SecondPriceNonDiscount = 0;
+        localStorage.secondSum = 0;
+        allPlus[i].setAttribute('disabled', 'true');
+        allInputs[i].setAttribute('disabled', 'true');
+        allMinus[i].setAttribute('disabled', 'true');
       }
     }
     if (id === '3') {
       if (CheckBoxes[i].checked) {
-        const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
-        mainCheckbox.checked = checkedCount === 3;
         mainCheckbox.indeterminate = checkedCount > 0 && checkedCount < CheckBoxes.length;
-        const SpanNumberKolVo3 = document.querySelector('#SpanNumberKolVo3').value;
-        const SpanResultSumNoMobile3 = document.querySelector('#SpanResultSumNoMobile3');
-        const SpanResultNonSkidka2Mobile = document.querySelector('#SpanResultNonSkidka2Mobile');
-        console.log(SpanResultNonSkidka2Mobile);
+        const SpanNumberKolVo3 = Number(thirdQuantitySum);
+        const onePieceThird3 = Number(document.querySelector('#SpanResultSumNoMobile3').innerHTML?.split(' ')?.join(''));
+        const ThirdPriceWithoutDiscount3 = Number(document.querySelector('.SpanResultNonSkidka3').innerHTML?.split(' ')?.join(''));
+        localStorage.thirdQuantitySum = Number(SpanNumberKolVo3);
+        localStorage.thirdSum = Number(onePieceThird3);
+        localStorage.ThirdPriceNonDiscount = Number(ThirdPriceWithoutDiscount3);
+        localStorage.sumResultTotal = Number(localStorage.sumResultTotal) + Number(localStorage.thirdSum);
+        localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) + Number(localStorage.ThirdPriceNonDiscount);
+        localStorage.allQuantity = Number(localStorage.allQuantity) + Number(localStorage.thirdQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${localStorage.allQuantity} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        allPlus[i].removeAttribute('disabled');
+        allInputs[i].removeAttribute('disabled');
+        allMinus[i].removeAttribute('disabled');
+      } else {
+        localStorage.sumResultTotal -= Number(localStorage.thirdSum);
+        localStorage.sumNonDiscount -= Number(localStorage.ThirdPriceNonDiscount);
+        localStorage.allQuantity -= Number(localStorage.thirdQuantitySum);
+        localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+        QuantityProduct.innerText = `${localStorage.allQuantity} товара`;
+        spanButtonZakaz.innerHTML = `Оплатить ${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        resultTotal.innerHTML = `${(localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}`;
+        SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+        localStorage.thirdQuantitySum = 0;
+        localStorage.ThirdPriceNonDiscount = 0;
+        localStorage.thirdSum = 0;
+        allPlus[i].setAttribute('disabled', 'true');
+        allInputs[i].setAttribute('disabled', 'true');
+        allMinus[i].setAttribute('disabled', 'true');
       }
     }
   });
 }
 
 mainCheckbox.addEventListener('click', async (e) => {
-  for (let i = 0; i < CheckBoxes.length; i++) {
-    if (CheckBoxes[i].checked) {
-      // обнуляем
+  if (mainCheckbox.checked) {
+    for (let i = 0; i < CheckBoxes.length; i++) {
+      CheckBoxes[i].checked = !this.checked;
+      const firstKolvo = Number(document.querySelector('.SpanNumberKolVo1').value);
+      const secondKolvo = Number(document.querySelector('.SpanNumberKolVo2').value);
+      const thirdKolvo = Number(document.querySelector('.SpanNumberKolVo3').value);
+
+      const onePieceFirst1 = Number(document.querySelector('#SpanResultSumNoMobile1').innerHTML?.split(' ')?.join(''));
+      const onePieceSecond2 = Number(document.querySelector('#SpanResultSumNoMobile2').innerHTML?.split(' ')?.join(''));
+      const onePieceThird3 = Number(document.querySelector('#SpanResultSumNoMobile3').innerHTML?.split(' ')?.join(''));
+
+      const FirstPriceWithoutDiscount1 = Number(document.querySelector('.SpanResultNonSkidka1').innerHTML?.split(' ')?.join(''));
+      const SecondPriceWithoutDiscount2 = Number(document.querySelector('.SpanResultNonSkidkaResultSecond').innerHTML?.split(' ')?.join(''));
+      const ThirdPriceWithoutDiscount3 = Number(document.querySelector('.SpanResultNonSkidka3').innerHTML?.split(' ')?.join(''));
+
+      localStorage.firstQuantitySum = firstKolvo;
+      localStorage.firstSum = onePieceFirst1;
+      localStorage.FirstPriceNonDiscount = FirstPriceWithoutDiscount1;
+      localStorage.secondQuantitySum = secondKolvo;
+      localStorage.secondSum = onePieceSecond2;
+      localStorage.SecondPriceNonDiscount = SecondPriceWithoutDiscount2;
+      localStorage.thirdQuantitySum = thirdKolvo;
+      localStorage.thirdSum = onePieceThird3;
+      localStorage.ThirdPriceNonDiscount = ThirdPriceWithoutDiscount3;
+      localStorage.sumResultTotal = Number(onePieceFirst1) + Number(onePieceSecond2) + Number(onePieceThird3);
+      localStorage.sumNonDiscount = Number(FirstPriceWithoutDiscount1) + Number(SecondPriceWithoutDiscount2) + Number(ThirdPriceWithoutDiscount3);
+      localStorage.allQuantity = firstKolvo + secondKolvo + thirdKolvo;
+      localStorage.resultSumDiscount = `−${localStorage.sumNonDiscount - localStorage.sumResultTotal}`;
+      resultTotal.innerHTML = `${localStorage.sumResultTotal}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      SumProduct.innerHTML = `${(`${localStorage.sumNonDiscount}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
+      spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
+      for (let x = 0; x < blockNone.length; x++) {
+        blockNone[x].style.display = 'flex';
+      }
+      console.log(localStorage);
+      if (Number(localStorage.firstQuantitySum) === 1) {
+        allMinus[0].setAttribute('disabled', 'true');
+        allPlus[0].removeAttribute('disabled');
+      } else {
+        allMinus[0].removeAttribute('disabled');
+        allPlus[0].setAttribute('disabled', 'true');
+      }
+      if (Number(localStorage.secondQuantitySum) === 1) {
+        allMinus[1].setAttribute('disabled', 'true');
+        allPlus[1].removeAttribute('disabled');
+      } else {
+        allMinus[1].removeAttribute('disabled');
+        allPlus[1].removeAttribute('disabled');
+      }
+      if (Number(localStorage.thirdQuantitySum) === 1) {
+        allMinus[2].setAttribute('disabled', 'true');
+        allPlus[2].removeAttribute('disabled');
+      } else {
+        allMinus[2].removeAttribute('disabled');
+        allPlus[2].setAttribute('disabled', 'true');
+      }
+      allInputs[i].removeAttribute('disabled');
+    }
+  } else {
+    for (let i = 0; i < CheckBoxes.length; i++) {
       CheckBoxes[i].checked = this.checked;
       resultTotal.innerHTML = '0';
       SumProduct.innerHTML = '0 сом';
       SumDiscount.innerHTML = '0 сом';
       QuantityProduct.innerHTML = '0 товаров';
+      spanButtonZakaz.innerHTML = 'Оплатить 0 сом';
+      localStorage.firstQuantitySum = 0;
+      localStorage.FirstPriceNonDiscount = 0;
+      localStorage.firstSum = 0;
+      localStorage.secondQuantitySum = 0;
+      localStorage.SecondPriceNonDiscount = 0;
+      localStorage.secondSum = 0;
+      localStorage.thirdQuantitySum = 0;
+      localStorage.ThirdPriceNonDiscount = 0;
+      localStorage.thirdSum = 0;
+      localStorage.sumResultTotal = 0;
+      localStorage.sumNonDiscount = 0;
+      localStorage.allQuantity = 0;
+      localStorage.resultSumDiscount = 0;
       const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
       for (let x = 0; x < blockNone.length; x++) {
         blockNone[x].style.display = 'none';
       }
-    } else {
-      CheckBoxes[i].checked = !this.checked;
-      resultTotal.innerHTML = (localStorage.sumResultTotal).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-      SumProduct.innerHTML = `${(localStorage.sumNonDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      QuantityProduct.innerHTML = `${localStorage.allQuantity} товара`;
-      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
-      for (let x = 0; x < blockNone.length; x++) {
-        blockNone[x].style.display = 'flex';
-      }
+      allPlus[i].setAttribute('disabled', 'true');
+      allInputs[i].setAttribute('disabled', 'true');
+      allMinus[i].setAttribute('disabled', 'true');
     }
   }
 });
