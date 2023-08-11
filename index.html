@@ -5,241 +5,1304 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping-card</title>
     <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/index.js"></script>
 </head>
 <body>
 
-    <header class="header">
+    <header class="Header">
 
-        <div class="BurgerAndLogo">
+        <div class="Shapka">
+            
+            <div class="BurgerAndLogo">
 
-            <div class="blockBurger">
-                <button class="buttonBurger">
-                    <img class="burger" src="public/Vector.svg" alt="burger">
-                </button>
-
-                <div class="blockHeaderText">
-                    <span class="TextLogo">
-                        Товары и точка
-                    </span>
+                <div class="Burger">
+                    <button type="button" class="ButtonBurger"><img class="BurgerSVG" src="public/icons/Vector.svg" alt="Burger"></button>
                 </div>
+
+                <div class="Burger2">
+                    <button type="button" class="ButtonBurger2"><img class="BurgerSVG BurgerSVG2" src="public/icons/burgerMob.svg" alt="Burger"></button>
+                </div>
+
+                <div class="Logo">
+                    <span class="SpanLogo"> Товары и точка</span>
+                </div>
+
+                <div class="BlockSearchIcon">
+                    <button type="button" class="SearchIconButton"><img class="SearchIconButton2" src="public/icons/whiteSearch.svg" alt="Burger"></button>
+                </div>
+
             </div>
 
-            <div class="BlockInput">
-                <div class="BlockUnderInput">
-                    <div class="BlockSearch">
+            <div class="BlockInputSearch">
+                <div class="InsideBlockInputSearch">
+                    <div class="InsideBlockSearch">
                         <input class="InputSearch" type="text" placeholder="Я ищу...">
                     </div>
-                    <img class="imgSearch" src="public/Search.svg" alt="Search">
+                    <button class="ButtonSearch" type="button"><img class="ImgButtonSearch" src="public/icons/Search.svg" alt="Search"></button>
                 </div>
             </div>
 
-            <div class="BlockIcons">
+            <div class="BlockHeaderIcons">
 
-                <div class="Profile">
+                <div class="HeaderProfileBlock">
 
-                    <div class="firstBlockProfile">
-                        <div class="SecondBlockProfile">
-                            <div class="ThirdBlockProfile">
-                                <div class="ProfileInside">
-                                    <img class="ProfileIcon" src="public/icon-profile.svg" alt="">
-                                </div>
+                    <div class="InsideHeaderProfileBlock">
+                        <div class="InsideMainHeaderProfileBlock">
+                             <div class="BlockIconProfile">
+                                <img class="IconProfile" src="public/icons/icon-profile.svg" alt="profile">
                             </div>
                         </div>
                     </div>
 
-                    <span class="TextIcon">
-                        Профиль
-                    </span>
+                    <span class="CommonLable">Профиль</span>
 
                 </div>
 
-                <div class="Basket">
+                <div class="HeaderBasketBlock">
 
-                    <div class="BlockBasket">
-
-                        <img class="BasketIcon" src="public/icon-basket.svg" alt="basket">
-                        
-                        <label class="LabelBasket">
-                            <div class="BlockLableBasket">
-                                <span class="TextLabelBasket">
-                                    3
-                                </span>
-                            </div>
-                        </label>
-
+                    <div class="InsideHeaderBasketBlock">
+                        <img id="IconeBasket" class="IconBasket" src="public/icons/icon-basket.svg" alt="basket">
+                        <label class="LabelIconBasket" for="IconeBasket"><span class="SpanLabelIconBasket">3</span></label>
                     </div>
-
-                    <span class="TextIcon">
-                        Корзина
-                    </span>
+                    
+                    <span class="CommonLable">Корзина</span>
 
                 </div>
-
             </div>
         </div>
 
-        <div class="rounding"></div>
+        <div class="Rounding1"></div>
 
     </header>
+    
+    <section class="Section">
 
-    <section class="SectionBody">
+        <div class="SectionLeftBlock">
 
-        <div class="FirstBasketBlock">
-            <h1 class="H1Basket">
-                Корзина
-            </h1>
-            
-            <div class="InsideFirstBasketBlock">
+            <h1 class="TitleBasket">Корзина</h1>
 
-                <div class="FirstInsideBasketBlock">
+            <div class="SectionContentLeftBlock">
 
-                    <div class="AllCheckbox">
+                <div class="FirstAndSecondContentBlock">
 
-                        <img src="public/checkbox.svg" alt="checkbox">
-                        <div class="TextCheckBox">
-                            Выбрать все
+                    <div class="CheckBoxALlBlock">
+
+                        <div class="BlockLabelCheckbox">
+                            <label for="CheckboxAll" class="LabelCheckBoxAll"><input id="CheckboxAll" class="InputCheckBox" type="checkbox" name="Выбрать всё" checked="true"><span class="checkmark"></span><span class="TextInputCheckBox">Выбрать все</span></label>
+                            <span class="spanTransorfm">203 товаров · 2 101 063 сом</span>
                         </div>
-                        <img src="public/vectorUp.svg" alt="VectorUp">
+                        
+                        <div>
+                            <button class="buttonVectorUpFirst active" type="button"><div class="ImgVectorUp"></button>
+                        </div>
 
                     </div>
 
-                    <div class="BlockInfoSale">
+                    <img class="LineUpTitle" src="public/icons/line.svg" alt="line">
 
-                        <div class="FirstInfoSaleBlock">
-                            
+                    <div class="ContentFirstBlock">
 
-                            <div class="FirstInfoLeftBlock">
-                                <div class="BlockCheckImg">
-                                    <img src="public/checkbox.svg" alt="checkbox">
-                                    <img src="public/img/FirstFotoSale.png" alt="FirstFoto">
+                        <div class="InsideContentBlocks">
+
+                            <div class="ContainerFirstContentBlock">
+
+                                <div class="BlockFirstCheckBox">
+                                    <label for="FirstCheckBox1" class="LabelCheckBoxAll FirstCheckBox"><input id="FirstCheckBox1" class="InputCheckBox InputCheckBoxFunc" type="checkbox" name="Выбрать всё" checked="true"><span class="checkmark ThreeCheckboxCheckamrk"></span></label>
+                                    <img class="CommonImgFirstContentBlock" src="public/img/FutbolkaBIG.png" alt="FutbolkaBIG">
+                                    <div class="BlockRazmer">56</div>
                                 </div>
-                                <div class="BlockTextFirst">
-                                    <span class="FirstTitleSale"> Футболка UZcotton мужская</span>
 
-                                    <div class="FirstSpanBlock">
-                                        <span class="SpanText">Цвет: белый</span>
-                                        <span class="SpanText">Размер: 56</span>
+                                <div class="ContainerInfoZakaz">
+
+                                    <div class="BlockResultInfoContentMobile">
+
+                                        <div class="BlockResultSum">
+                                            <h3 id="SpanResultSum1Mobile" class="SpanResultSum SpanResultSum1">522</h3>
+                                            <h4 class="ValutaSpan"> сом</h4>
+                                        </div>
+    
+                                        <div class="BlockResultNonSkidka">
+    
+                                            <div>
+                                                <span id="SpanResultNonSkidka1Mobile" class="SpanResultNonSkidka SpanResultNonSkidka1">1051</span>
+                                                <span class="spanSomResultNonSkidka">сом</span>
+                                            </div>
+    
+                                            <img class="LineStrikeResult" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                            <img class="LineDownResult" src="public/icons/Vector_down.svg" alt="LineDown">
+    
+                                        </div>
+    
                                     </div>
 
-                                    <div class="SecondSpanBlock">
-                                        <div class="InsideFirstSpanBlock">
-                                            <span class="FirstInsideSpan">Коледино WB</span>
+                                    <span class="TitleContainerInfoZakaz">Футболка UZcotton мужская</span>
+
+                                    <div class="BodyContainerInfoZakaz">
+
+                                        <span class="CommonSpanInfo">Цвет: белый</span>
+                                        <span class="CommonSpanInfo SecondSpanInfo">Размер: 56</span>
+
+                                    </div>
+
+                                    <div class="FooterContainerInfoZakaz">
+
+                                        <div class="FooterUpContainer">
+                                            <span class="FooterUpSpan">Коледино WB</span>
+                                        </div>
+
+                                        <div class="FooterDownContainer">
+                                            <span class="FooterUpSpan SecondSpanInfoFooter">OOO Вайлдберриз</span>
+                                            <img class="WBInfo" src="public/icons/icon_Info.svg" alt="info">
+                                            <div class="tooltipWB">
+                                                <span class="tootlipTitle">OOO Вайлдберриз</span>
+                                                <span class="tootlipText">ОГРН: 1067746062449   </span>
+                                                <span class="tootlipText">142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ContainerSecondContentBlock">
+
+                                <div class="BlockSumInfoContent BlockSumInfoContentMobile">
+
+                                    <div class="BlockSumContent">
+                                        
+                                        <div class="ButtonMinusBlock">
+                                            <button disabled class="ButtonMinus" id="ButtonMinus1" type="button">−</button>
+                                        </div>
+
+                                        <input min="1" max="2" id="SpanNumberKolVo1" class="SpanNumberKolVo SpanNumberKolVo1" value="1">
+                                        
+                                        <div class="BlockPlusBlock">
+                                            <button class="ButtonPlus" id="ButtonPlus1" type="button">+</button>
+                                        </div>
+
+                                    </div>
+
+                                    <span class="SpanKeepContent">Осталось 2 шт.</span>
+
+                                    <div class="BlockInconsLikeDelete">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                    </div>
+
+                                </div>
+
+                                <div class="BlockResultInfoContent">
+
+                                    <div class="BlockResultSum">
+                                        <h3 id="SpanResultSumNoMobile1" class="SpanResultSum SpanResultSum1">522</h3>
+                                        <h4 class="ValutaSpan"> сом</h4>
+                                    </div>
+
+                                    <div class="BlockResultNonSkidka">
+
+                                        <div>
+                                            <span id="SpanResultNonSkidka1Mobile" class="SpanResultNonSkidka SpanResultNonSkidka1">1051</span>
+                                            <span class="spanSomResultNonSkidka">сом</span>
+                                        </div>
+
+                                        <img class="LineStrikeResult" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                        <img class="LineDownResult" src="public/icons/Vector_down.svg" alt="LineDown">
+                                        <div id="tooltipNonSkidka1Span" class="activeTooltipNonskidka"></div>
+
+                                        <div class="tooltipNonSkidka1">
+
+                                            <div class="tooltipTitleNonSkidka">
+                                                <span class="SpanTitleNonSkidka">Скидка 47%</span>
+                                                <span class="SpanTitleNonSkidka">Скидка покупателя 3%</span>
+                                            </div>
+
+                                            <div class="tooltipBodyNonSkidka">
+                                                <span class="SpanBodyNonSkidka">−300 сом</span>
+                                                <span class="SpanBodyNonSkidka">−30 сом</span>
+                                            </div>
+                                            
                                         </div>
                                         
-                                        <div class="InsideSecondSpanBlock">
-                                            <span class="SecondInsideSpan">OOO Вайлдберриз</span>
-                                            <img src="public/icon_Info.svg" alt="info">
-                                        </div>
                                     </div>
 
                                 </div>
 
                             </div>
 
-                            <div class="SecondInfoLeftBlock">
+                            <img class="LineUp" src="public/icons/line.svg" alt="line">
 
-                                <div class="FirstInfoRigthBlock">
+                        </div>
 
-                                    <div class="BlockButtonSale">
+                        <div class="InsideContentBlocks">
 
-                                        <div class="BlockButtonMinus">
-                                            <button class="ButtonMinus">
-                                                -
-                                            </button>
+                            <div class="ContainerFirstContentBlock ContainerFirstContentBlockMobile">
+
+                                <div class="BlockFirstCheckBox">
+                                    <label for="FirstCheckBox2" class="LabelCheckBoxAll FirstCheckBox"><input id="FirstCheckBox2" class="InputCheckBox InputCheckBoxFunc" type="checkbox" name="Выбрать всё" checked="true"><span class="checkmark ThreeCheckboxCheckamrk"></span></label>
+                                    <img class="CommonImgFirstContentBlock" src="public/img/PhoneBig.png" alt="PhoneBIG">
+                                </div>
+
+                                <div class="ContainerInfoZakaz">
+
+                                    <div class="BlockResultInfoContentMobile">
+
+                                        <div class="BlockResultSum">
+                                            <h3 id="SpanResultSum2Mobile" class="SpanResultSum2">2 100 047</h3>
+                                            <h4 class="ValutaSpan"> сом</h4>
+                                        </div>
+    
+                                        <div class="BlockResultNonSkidka BlockResultNonSkidka2">
+
+                                            <div>
+                                                <span id="SpanResultNonSkidka2Mobile" class="SpanResultNonSkidka2">2 300 047 сом</span>
+                                                <span class="SpanResultNonSkidka2 SpanResultNonSkidka2NonDisplay">сом</span>
+                                            </div>
+    
+                                            <img class="LineStrikeResult LineStrikeResult2" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                            <img class="LineDownResult LineDownResult2" src="public/icons/Vector_down2.svg" alt="LineDown">
+
+                                        </div>
+    
+                                    </div>
+
+                                    <span class="TitleContainerInfoZakaz2">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
+                                    <span class="TitleContainerInfoZakaz2Mobile">Силиконовый чехол картхолдер (отверстия) для...</span>
+
+                                    <div class="BodyContainerInfoZakaz BodyContainerInfoZakazMobile">
+                                        <span class="CommonSpanInfo">Цвет: прозрачный</span>
+                                    </div>
+
+                                    <div class="FooterContainerInfoZakaz">
+
+                                        <div class="FooterUpContainer">
+                                            <span class="FooterUpSpan">Коледино WB</span>
                                         </div>
 
-                                        <div class="BlockSpanResult">
-                                            <span class="SpanResultQuantity">
-                                                1
-                                            </span>
+                                        <div class="FooterDownContainer">
+                                            <span class="FooterUpSpan SecondSpanInfoFooter">OOO Мегапрофстиль</span>
+                                            <img class="MegaInfo" src="public/icons/icon_Info.svg" alt="info">
+                                            <div class="tooltip">
+                                                <span class="tootlipTitle">OOO «МЕГАПРОФСТИЛЬ»</span>
+                                                <span class="tootlipText">ОГРН: 5167746237148</span>
+                                                <span class="tootlipText">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                            </div>
                                         </div>
 
-                                        <div class="BlockButtonPlus">
-                                            <button class="ButtonPlus">
-                                                +
-                                            </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ContainerSecondContentBlock">
+
+                                <div class="BlockSumInfoContent BlockSumInfoContentMobile BlockSumInfoContentMobileSecond">
+
+                                    <div class="BlockSumContent">
+                                        
+                                        <div class="ButtonMinusBlock">
+                                            <button class="ButtonMinus" id="ButtonMinus2" type="button">−</button>
+                                        </div>
+
+                                        <input min="1" id="SpanNumberKolVo2" class="SpanNumberKolVo SpanNumberKolVo2" value="200">
+                                        
+                                        <div class="BlockPlusBlock">
+                                            <button class="ButtonPlus" id="ButtonPlus2" type="button">+</button>
                                         </div>
 
                                     </div>
 
-                                    <span class="RemainedSpan">
-                                        Осталось 2 шт.
-                                    </span>
-
-                                    <div class="LikeAndDeleteIcons">
-                                        <button><img src="public/icon-Like.svg" alt="Like"></button>
-                                        <button><img src="public/icon-Delete.svg" alt="Delete"></button>
+                                    <div class="BlockInconsLikeDelete">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
 
                                 </div>
 
-                                <div class="SecondInfoRigthBlock">
+                                <div class="BlockResultInfoContent">
 
-                                    <div class="BlockPrice">
-                                        <h3 class="PriceSpanNumbers">522</h3>
-
-                                        <h4 class="PriceSpanCurrency">сом</h4>
+                                    <div class="BlockResultSum">
+                                        <h3 id="SpanResultSumNoMobile2" class="SpanResultSum2">2 100 047</h3>
+                                        <h4 class="ValutaSpan"> сом</h4>
                                     </div>
 
-                                    <div class="PreviousPrice">
-                                        <img class="LineStrike" src="public/Vector_strikethrough.svg" alt="line">
-                                        <span class="PreviousPriceSpan">1051 сом</span>
-                                        <img class="LineDown" src="public/Vector_down.svg" alt="line">
+                                    <div class="BlockResultNonSkidka BlockResultNonSkidka2">
+                                        <div>
+                                            <span id="SpanResultNonSkidka2Mobile" class="SpanResultNonSkidka2 SpanResultNonSkidkaResultSecond">2 300 047</span>
+                                            <span class="SpanResultNonSkidka2 SpanResultNonSkidka2NonDisplay">сом</span>
+                                        </div>
+
+                                        <img class="LineStrikeResult LineStrikeResult2" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                        <img class="LineDownResult LineDownResult2" src="public/icons/Vector_down2.svg" alt="LineDown">
+                                        <div id="spanToooltipResult" class="activeTooltipNonskidka"></div>
+                                        <div class="tooltipNonSkidka">
+
+                                            <div class="tooltipTitleNonSkidka">
+                                                <span class="SpanTitleNonSkidka">Скидка 5.7%</span>
+                                                <span class="SpanTitleNonSkidka">Скидка покупателя 3%</span>
+                                            </div>
+
+                                            <div class="tooltipBodyNonSkidka">
+                                                <span class="SpanBodyNonSkidka">−300 сом</span>
+                                                <span class="SpanBodyNonSkidka">−30 сом</span>
+                                            </div>
+                                            
+                                        </div>
+
                                     </div>
 
                                 </div>
 
                             </div>
 
-                            <img src="public/line.svg" alt="line" class="vectorLine">
+                            <img class="LineUpMobile" src="public/icons/line.svg" alt="line">
 
                         </div>
 
-                        <div class="SecondInfoSaleBlock">
-                            Вторая строка    
-                        </div>
+                        <div class="InsideContentBlocks">
 
-                        <div class="ThirdInfoSaleBlock">
-                            Третья строка
+                            <div class="ContainerFirstContentBlock">
+
+                                <div class="BlockFirstCheckBox">
+                                    <label for="FirstCheckBox3" class="LabelCheckBoxAll FirstCheckBox"><input id="FirstCheckBox3" class="InputCheckBox InputCheckBoxFunc" type="checkbox" name="Выбрать всё" checked="true"><span class="checkmark ThreeCheckboxCheckamrk"></span></label>
+                                    <img class="CommonImgFirstContentBlock" src="public/img/PanBig.png" alt="PanBIG">
+                                </div>
+
+                                <div class="ContainerInfoZakaz">
+
+                                    <div class="BlockResultInfoContentMobile">
+
+                                        <div class="BlockResultSum">
+                                            <h3 id="SpanResultSum3Mobile" class="SpanResultSum SpanResultSum3">494</h3>
+                                            <h4 class="ValutaSpan">сом</h4>
+                                        </div>
+    
+                                        <div class="BlockResultNonSkidka3">
+    
+                                            <div>
+                                                <span id="SpanResultNonSkidka3Mobile" class="SpanResultNonSkidka SpanResultNonSkidka3">950</span>
+                                                <span class="spanSomResultNonSkidka">сом</span>
+                                            </div>
+    
+                                            <img class="LineStrikeResult" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                            <img class="LineDownResult" src="public/icons/Vector_down.svg" alt="LineDown">
+    
+                                        </div>
+    
+                                    </div>
+
+                                    <span class="TitleContainerInfoZakaz TitleContainerInfoZakaz2">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,<br>Faber-Castell </span>
+                                    <span class="TitleContainerInfoZakaz2Mobile">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</span>
+
+                                    <div class="FooterContainerInfoZakaz FooterContainerInfoZakazMobile">
+
+                                        <div class="FooterUpContainer">
+                                            <span class="FooterUpSpan3">Коледино WB</span>
+                                        </div>
+
+                                        <div class="FooterDownContainer3">
+                                            <span class="FooterUpSpan SecondSpanInfoFooter">OOO Вайлдберриз</span>
+                                            <img class="WBInfo" src="public/icons/icon_Info.svg" alt="info">
+                                            <div class="tooltipWB">
+                                                <span class="tootlipTitle">OOO Вайлдберриз</span>
+                                                <span class="tootlipText">ОГРН: 1067746062449   </span>
+                                                <span class="tootlipText">142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ContainerSecondContentBlock">
+
+                                <div class="BlockSumInfoContent BlockSumInfoContentMobile BlockSumInfoContentMobileThird">
+
+                                    <div class="BlockSumContent">
+                                        
+                                        <div class="ButtonMinusBlock">
+                                            <button class="ButtonMinus" id="ButtonMinus3" type="button">−</button>
+                                        </div>
+
+                                        <input min="1" max="2" id="SpanNumberKolVo3" class="SpanNumberKolVo SpanNumberKolVo3" value="2">
+                                        
+                                        <div class="BlockPlusBlock">
+                                            <button disabled class="ButtonPlus" id="ButtonPlus3" type="button">+</button>
+                                        </div>
+
+                                    </div>
+
+                                    <span class="SpanKeepContent SpanKeepContentSecond">Осталось 2 шт.</span>
+
+                                    <div class="BlockInconsLikeDelete BlockInconsLikeDeleteMobile">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                    </div>
+
+                                </div>
+
+                                <div class="BlockResultInfoContent">
+
+                                    <div class="BlockResultSum">
+                                        <h3 id="SpanResultSumNoMobile3" class="SpanResultSum SpanResultSum3">494</h3>
+                                        <h4 class="ValutaSpan">сом</h4>
+                                    </div>
+
+                                    <div class="BlockResultNonSkidka3">
+
+                                        <div>
+                                            <span id="SpanResultNonSkidka3Mobile" class="SpanResultNonSkidka SpanResultNonSkidka3">950</span>
+                                            <span class="spanSomResultNonSkidka">сом</span>
+                                        </div>
+
+                                        <img class="LineStrikeResult" src="public/icons/Vector_strikethrough.svg" alt="LineStrike">
+                                        <img class="LineDownResult" src="public/icons/Vector_down.svg" alt="LineDown">
+                                        <div id="tooltipNonSkidka2Span" class="activeTooltipNonskidka"></div>
+                                        <div class="tooltipNonSkidka2">
+
+                                            <div class="tooltipTitleNonSkidka">
+                                                <span class="SpanTitleNonSkidka">Скидка 45%</span>
+                                                <span class="SpanTitleNonSkidka">Скидка покупателя 3%</span>
+                                            </div>
+
+                                            <div class="tooltipBodyNonSkidka">
+                                                <span class="SpanBodyNonSkidka">−300 сом</span>
+                                                <span class="SpanBodyNonSkidka">−30 сом</span>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <img class="LineUpMobile" src="public/icons/line.svg" alt="line">
+
                         </div>
 
                     </div>
 
                 </div>
 
-                <div class="SecondInsideBasketBlock">
-                    Блок 2
+                <div class="SecondContentBlock">
+
+                    <div class="InsideFirstBlockSecondContentBlock noChangeBlock">
+
+                        <div class="OtsytstvyetTovarBlock">
+                            <span class="SpanNonHaveTovar">Отсутствуют · 3 товара</span>
+                        </div>
+
+                        <button class="buttonVectorUpSecond active" type="button"><div class="ImgVectorUp2 ImgVectorDown2"></button>
+
+                    </div>
+
+                    <div class="InsideSecondBlockSecondContentBlock">
+
+                        <div class="AbsentInfoCommonBlock">
+
+                            <div class="InsideAbsentInfoFirstBlock">
+
+                                <div class="BlockFirstCheckBox">
+                                    <img class="ImgBlackWhite" src="public/img/FutbolkaBIG.png" alt="FutbolkaBIG">
+                                    <div class="BlockRazmer">56</div>
+                                </div>
+
+                                <div class="ContentAbsentFirstBlock">
+
+                                    <span class="TitleAbsentFirstBlock">Футболка UZcotton мужская</span>
+
+                                    <div class="InsideTitleAbsentFirstBlock">
+                                        <span class="InsideSpanAbsentCommonBlock InsideSpanAbsentCommonBlock2">Цвет: белый</span>
+                                        <span class="InsideSpanAbsentCommonBlock InsideSpanAbsentCommonBlockMobile">Размер: 56</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="InsideAbsentInfoIconBlock InsideAbsentInfoIconBlockMobile">
+                                <div class="AbsentInfoIconsBlock">
+                                    <div class="InsideAbsentIconsBlock InsideAbsentIconsBlockFirst">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img class="LineUpMobile" src="public/icons/line.svg" alt="line">
+                            <img class="LineUp2" src="public/icons/line.svg" alt="line">
+
+                        </div>
+
+                        <div class="AbsentInfoCommonBlock">
+
+                            <div class="InsideAbsentInfoFirstBlock">
+
+                                <img class="ImgBlackWhite" src="public/img/PhoneBig.png" alt="PhoneBIG">
+
+                                <div class="ContentAbsentFirstBlock ContentAbsentFirstBlockSecond">
+
+                                    <span class="TitleAbsentSecondBlock">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
+                                    <span class="TitleAbsentSecondBlock2Mobile">Силиконовый чехол картхолдер (отверстия) для...</span>
+
+                                    <div class="InsideTitleAbsentSecondBlock">
+                                        <span class="InsideSpanAbsentCommonBlock">Цвет: прозрачный</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="InsideAbsentInfoIconBlock InsideAbsentInfoIconBlockMobile">
+                                <div class="AbsentSecondInfoIconsBlock">
+                                    <div class="InsideAbsentIconsBlock">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="AbsentInfoCommonBlock">
+
+                            <div class="InsideAbsentInfoFirstBlock ThirdInsideAbsentInfoFirstBlock">
+
+                                <img class="ImgBlackWhite" src="public/img/PanBig.png" alt="PanBIG">
+
+                                <div class="ContentAbsentFirstBlock">
+
+                                    <span class="TitleAbsentSecondBlock">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell </span>
+                                    <span class="TitleAbsentSecondBlock2Mobile">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="InsideAbsentInfoIconBlock InsideAbsentInfoIconBlockMobile">
+                                <div class="AbsentSecondInfoIconsBlock">
+                                    <div class="InsideAbsentIconsBlock InsideAbsentIconsBlockThird">
+                                        <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
+                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="ThirdInsideBasketBlock">
-                    Блок 3
+                <div class="ThirdContentBlock">
+
+                    <div class="BlockDeliveryMethods">
+
+                        <div class="ContentDeliveryMethodsBlock">
+
+                            <div class="BlockTitleDeliveryMethods">
+
+                                <h2 class="SpanTitleDelivery">Способ доставки</h2>
+
+                                <div class="BlockButtonChange">
+                                    <button id="buttonDeliveryChange" class="buttonChangeDelivery" type="button"><h4 class="ButtonChange">Изменить</h4></button>
+                                </div>
+
+                                <div id="modalDelivery" class="modalDelivery">
+                                    <div class="closeModalDelivery">
+
+                                        <div class="closeModalDeliveryModal">
+                                            <div class="modal-headerDelivery">
+                                                <span class="close1"></span>
+                                                <h3 class="TitleModalDelivery">Способ доставки</h3>
+                                            </div>
+    
+                                            <div class="modal-bodyDelivery">
+    
+                                                <div class="BlockButtonChoice">
+                                                    <button class="buttonPickUpPoint"><span class="SpanButtonText">В пункт выдачи</span></button>
+                                                    <button class="buttonCourier"><span class="SpanButtonText">Курьером</span></button>
+                                                </div>
+    
+                                                <div class="BlockDostavkaPickUpPoint">
+    
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <span class="spanDeliveryModal">Адреса пунктов выдачи</span>
+                                                    </div>
+    
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <div class="CommonBlockModalDelivery">
+                                                            <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxFourthAdress">
+                                                            <label class="CheckboxCardModalDelivery" for="CheckBoxFourthAdress">Бишкек, улица Ахматбека Суюмбаева, 12/1<div class="ImgDeleteIcon"></div></button></label>
+                                                            
+                                                            <div class="BlockModalRaiting">
+
+                                                                <div class="InsideBlockRaiting InsideBlockRaitingFirst">
+                                                                    <img class="StarIcon" src="public/icons/star_fill.svg" alt="star">
+                                                                    <span class="RaitingStarNumber">4.98</span>
+                                                                </div>
+
+                                                                <span class="SpanFooterPointText">Пункт выдачи</span>
+                                                            </div>
+
+                                                        </div>
+                                                        <button class="ButtonDeleteModalFourth" type="button"><div class="ImgDeleteIconGray"></div></button>
+
+                                                    </div>
+    
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <div class="CommonBlockModalDelivery">
+                                                            <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxFifthAdress">
+                                                            <label class="CheckboxCardModalDelivery" for="CheckBoxFifthAdress">Бишкек, улица Ахматбека Суюмбаева, 12/1<div class="ImgDeleteIcon"></div></button></label>
+
+                                                            <div class="BlockModalRaiting">
+
+                                                                <div class="InsideBlockRaiting InsideBlockRaitingFirst">
+                                                                    <img class="StarIcon" src="public/icons/star_fill.svg" alt="star">
+                                                                    <span class="RaitingStarNumber">4.99</span>
+                                                                </div>
+
+                                                                <span class="SpanFooterPointText">Пункт выдачи</span>
+                                                            </div>
+                                                        </div>
+                                                        <button class="ButtonDeleteModalFifth" type="button"><div class="ImgDeleteIconGray"></div></button>
+                                                    </div>
+    
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <div class="CommonBlockModalDelivery">
+                                                            <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxSixthAdress">
+                                                            <label class="CheckboxCardModalDelivery" for="CheckBoxSixthAdress">Бишкек, улица Ахматбека Суюмбаева, 12/1<div class="ImgDeleteIcon"></div></button></label>
+                                                        
+                                                            <div class="BlockModalRaiting">
+
+                                                                <div class="InsideBlockRaiting InsideBlockRaitingFirst">
+                                                                    <img class="StarIcon" src="public/icons/star_fill.svg" alt="star">
+                                                                    <span class="RaitingStarNumber">4.99</span>
+                                                                </div>
+
+                                                                <span class="SpanFooterPointText">Пункт выдачи</span>
+                                                            </div>
+                                                        </div>
+                                                        <button class="ButtonDeleteModalSixth" type="button"><div class="ImgDeleteIconGray"></div></button>
+                                                    </div>
+    
+                                                </div>
+    
+                                                <div class="BlockDostavkaCourier">
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <span class="spanDeliveryModal">Мои адресы</span>
+                                                    </div>
+        
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxFirstAdress">
+                                                        <label class="CheckboxCardModalDelivery" for="CheckBoxFirstAdress">Бишкек, улица Табышалиева, 57</label>
+                                                        <button class="ButtonDeleteModalFirst" type="button"><div class="ImgDeleteIconGray"></div></button>
+                                                    </div>
+        
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxSecondAdress">
+                                                        <label class="CheckboxCardModalDelivery" for="CheckBoxSecondAdress">Бишкек, улица Жукеева-Пудовкина, 77/1</label>
+                                                        <button class="ButtonDeleteModalSecond" type="button"><div class="ImgDeleteIconGray"></div></button>
+                                                    </div>
+        
+                                                    <div class="BlockCardDeliveryModal">
+                                                        <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxThirdAdress">
+                                                        <label class="CheckboxCardModalDelivery" for="CheckBoxThirdAdress">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label>
+                                                        <button class="ButtonDeleteModalThird" type="button"><div class="ImgDeleteIconGray"></div></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footerDelivery">
+                                            <div class="ButtonModalChangeSaveDelivery">
+                                                <button class="buttonChangeSposobDelivery" type="button">Выбрать</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="BlockContentDelivery">
+
+                                <div class="FirstInsideBlockDelivery">
+
+                                    <div class="BlockPointOfIssue">
+                                        <span class="SpanCoomonDelivery SpanCoomonDeliveryFirst">Пункт выдачи</span>
+                                        <div class="FirstBlockDeliveryAdressMobile">
+
+                                            <div class="BlockTitleDelivery">
+                                                <span class="TitleAdress TitleAdressFirst">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                                            </div>
+    
+                                            <div class="BlockAdressDevilery">
+    
+                                                <div class="BlockRaiting BlockRaitingFirst">
+                                                    <div class="InsideBlockRaiting InsideBlockRaitingSecond">
+                                                        <img class="StarIcon" src="public/icons/star_fill.svg" alt="star">
+                                                        <span class="RaitingStarNumber">4.99</span>
+                                                    </div>
+                                                </div>
+    
+                                                <span class="SpanStarAdress">Ежедневно с 10 до 21 </span>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+
+                                    <div class="BlockShippingCost">
+                                        <span class="SpanCoomonDelivery">Стоимость доставки</span>
+
+                                        <div class="CoomonBlockDeliveryInsideMobile">
+                                            <span class="SpanSposobDostavki">Бесплатно</span>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="BlockFirstDeliveryTime BlockDisplayNoneChangeCheckbox">
+                                        <span class="SpanCoomonDelivery">5—6 февраля</span>
+
+                                        <div class="CoomonBlockDeliveryInsideMobile">
+
+                                            <div class="BlockDeliveryImageMobile">
+    
+                                                <img class="ImageDevileryCoomon" id="FirstImageDelivery" src="public/img/FutbolkaBIG.png" alt="FirstImageDelivery">
+                                                <label id="LableFirstImageDelivery" class="LabelFirstDelivery" for="FirstImageDelivery"><span class="FirstSpanLableDelivery">2</span></label>
+    
+                                                <img class="ImageDevileryCoomon" id="SecondImageDelivery" src="public/img/PhoneBig.png" alt="SecondImageDelivery">
+                                                <label id="LabelSecondImageDelivery" class="LabelSecondDelivery" for="SecondImageDelivery"><span class="SecondSpanLableDelivery">184</span></label>
+    
+                                                <img class="ImageDevileryCoomon SecondImageDelivery" id="ThirdImageDelivery" src="public/img/PanBig.png" alt="ThirdImageDelivery">
+                                                <label id="LabelThirdImageDelivery" class="LabelFirstDelivery" for="ThirdImageDelivery"><span class="ThirdSpanLableDelivery">2</span></label>
+    
+                                            </div>
+    
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="BlockSecondDeliveryTime blockNoneChange BlockDisplayNoneChangeCheckbox">
+                                        <span class="SpanCoomonDelivery">7—8 февраля</span>
+                                        <div class="CoomonBlockDeliveryInsideMobile">
+
+                                            <div class="BlockDeliveryImageMobile">
+                                                <img class="ImageDevileryCoomon ImageDevileryCoomonMobile" id="LastImageDelivery" src="public/img/PhoneBig.png" alt="PhoneBIG">
+                                                <label class="LastLabelImageDelivery" for="LastImageDelivery"><span class="SpanLastLabelDelivery">16</span></label>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="SecondInsideBlockDelivery">
+
+                                    <div class="FirstBlockDeliveryAdress">
+
+                                        <div class="BlockTitleDelivery">
+                                            <span class="TitleAdress TitleAdressSecond">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                                        </div>
+
+                                        <div class="BlockAdressDevilery">
+
+                                            <div class="BlockRaiting BlockRaitingSecond">
+                                                <div class="InsideBlockRaiting InsideBlockRaitingFirst">
+                                                    <img class="StarIcon" src="public/icons/star_fill.svg" alt="star">
+                                                    <span class="RaitingStarNumber">4.99</span>
+                                                </div>
+                                            </div>
+
+                                            <span class="SpanStarAdress">Ежедневно с 10 до 21 </span>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="CoomonBlockDeliveryInside">
+                                        <span class="SpanSposobDostavki">Бесплатно</span>
+                                    </div>
+                                    
+                                    <div class="CoomonBlockDeliveryInside BlockDisplayNoneChangeCheckbox">
+
+                                        <div class="BlockDeliveryImage">
+
+                                            <img class="ImageDevileryCoomon" id="FirstImageDelivery" src="public/img/FutbolkaBIG.png" alt="FirstImageDelivery">
+                                            <label id="LableFirstImageDelivery" class="LabelFirstDelivery" for="FirstImageDelivery"><span class="FirstSpanLableDelivery">2</span></label>
+
+                                            <img class="ImageDevileryCoomon" id="SecondImageDelivery" src="public/img/PhoneBig.png" alt="SecondImageDelivery">
+                                            <label id="LabelSecondImageDelivery" class="LabelSecondDelivery" for="SecondImageDelivery"><span class="SecondSpanLableDelivery">184</span></label>
+
+                                            <img class="ImageDevileryCoomon SecondImageDelivery" id="ThirdImageDelivery" src="public/img/PanBig.png" alt="ThirdImageDelivery">
+                                            <label id="LabelThirdImageDelivery" class="LabelFirstDelivery" for="ThirdImageDelivery"><span class="ThirdSpanLableDelivery">2</span></label>
+
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="CoomonBlockDeliveryInside blockNoneChange BlockDisplayNoneChangeCheckbox">
+
+                                        <div class="InsideLastImageBlock">
+                                            <img class="ImageDevileryCoomon" id="LastImageDelivery" src="public/img/PhoneBig.png" alt="PhoneBIG">
+                                            <label class="LastLabelImageDelivery" for="LastImageDelivery"><span class="SpanLastLabelDelivery">16</span></label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="ContentDeliveryBlock">
+                            <div class="InsideContentDevileryBlock">
+
+                                <img class="GalochkaObratnoe" src="public/icons/price shipping.svg" alt="Galka">
+
+                                <div class="ContentObrantoe">
+
+                                    <span class="SpanObranoe">Обратная доставка товаров на склад при отказе —</span>
+
+                                    <div class="BlockBesplatno">
+                                        <span id="SpanBesplatno" class="SpanBesplatno">бесплатно</span>
+
+                                        <div class="tooltipBlockBesplatno">
+                                            <span class="tooltipTextBesplatno">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                                        </div>
+
+                                        <label class="LabelGreenLine" for="SpanBesplatno">
+                                            <img class="IconGreenLine" src="public/icons/Vector_downGrenn.svg" alt="GreenLine">
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="BlockPaymentMethods">
+
+                        <div class="InsideBlockOplaty">
+
+                            <div class="TitleBlockOplaty">
+                                <div class="BlockSpanTitleOplaty">
+
+                                    <h2 class="SpanTitleOplaty">Способ оплаты</h2>
+
+                                    <div class="BlockButtonChange">
+                                        <button class="buttonChangeOplata" type="button"><h4 class="ButtonChange">Изменить</h4></button>
+                                    </div>
+
+                                    <div id="modalOplataMethods" class="modalOplata">
+                                        <div class="closeModalOplata">
+                                            <div class="modal-header">
+                                                <span class="close"></span>
+                                                <h3 class="TitleModalOplata">Способ оплаты</h3>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="BlockCardOplataModal">
+                                                    <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxMir">
+                                                    <label class="CheckboxCardModal" for="CheckBoxMir"><img class="modalIcon VisaMir" src="public/icons/CardMir.svg" alt="Mir">1234 56•• •••• 1234</label>
+                                                </div>
+
+                                                <div class="BlockCardOplataModal">
+                                                    <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxVisa">
+                                                    <label class="CheckboxCardModal" for="CheckBoxVisa"><img class="modalIcon VisaMir" src="public/icons/iconVisa.svg" alt="Visa">1234 56•• •••• 1234</label>
+                                                </div>
+
+                                                <div class="BlockCardOplataModal BlockCardOplataModalMasterMaestro">
+                                                    <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxMasterCard">
+                                                    <label class="CheckboxCardModal" for="CheckBoxMasterCard"><img class="modalIcon" src="public/icons/iconMasterCard.svg" alt="MasterCard">1234 56•• •••• 1234</label>
+                                                </div>
+
+                                                <div class="BlockCardOplataModal BlockCardOplataModalMasterMaestro">
+                                                    <input class="custom-radio" type="radio" name="chekbox" id="CheckBoxMaestro">
+                                                    <label class="CheckboxCardModal" for="CheckBoxMaestro"><img class="modalIcon" src="public/icons/iconMaestro.svg" alt="Maestro">1234 56•• •••• 1234</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="ButtonModalChangeSave">
+                                                    <button class="buttonChangeSposobOplaty" type="button">Выбрать</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="ContentBlockOplaty">
+                                <div class="BlockSposobOplaty">
+
+                                    <div class="IconSposob">
+                                        <img class="IconOplaty" src="public/icons/CardMir.svg" alt="mir">
+                                    </div>
+
+                                    <div class="BlockSpanSposobKarty">
+
+                                        <span class="SpanNumberCard">1234 56•• •••• 1234</span>
+
+                                        <span class="SpanDateAct">01/30</span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="FooterBlockOplaty">
+                            <span class="SpanInfoOplaty">Спишем оплату с карты при получении</span>
+                        </div>
+
+                    </div>
+
+                    <div class="BlockRecipient">
+
+                        <div class="BlockTitleRecipient">
+                            <div class="InsideBlockTitleRecipient">
+                                <h2 class="SpanTitleRecipient">Получатель</h2>
+                            </div>
+                        </div>
+
+                        <!-- Блок на десктоп -->
+                        <div class="BlockContentRecipient">
+
+                            <div class="CoomontBlockContentRecipient">
+
+                                <div class="BlockInputsCoomon">
+
+                                    <label class="LabelPlaceHolder" for="InputFirstName">Имя</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="FirstName" class="InputsRecipient" id="InputFirstName" type="text" placeholder="Укажите имя">
+                                        <img class="ImgLineDownInput" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorFirstName" class="LabelError" for="InputFirstName">Укажите имя</label>
+
+                                </div>
+
+                                <div class="BlockInputsCoomon">
+
+                                    <label class="LabelPlaceHolder" for="InputSecondName">Фамилия</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="LastName" class="InputsRecipient" id="InputLastName" type="text" placeholder="Введите фамилию">
+                                        <img class="ImgLineDownInput" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LebelErrorLastName" class="LabelError" for="InputSecondName">Укажите фамилию</label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="CoomontBlockContentRecipient2">
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon2">
+
+                                    <label class="LabelPlaceHolder" for="InputEmail">Почта</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="email" class="InputsRecipient" id="InputEmail" type="text" placeholder="Укажите электронную почту">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorEmail" class="LabelError" for="InputEmail">Проверьте адрес электронной почты</label>
+
+                                </div>
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon2">
+
+                                    <label class="LabelPlaceHolder" for="InputPhone">Телефон</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="phone" class="InputsRecipient" id="InputPhone" type="text" placeholder="Укажите номер телефона" maxlength="30">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorPhone" class="LabelError" for="InputPhone">Формат: +9 999 999 99 99</label>
+
+                                </div>
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon2">
+
+                                    <label class="LabelPlaceHolder" for="InputINN">ИНН</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="INN" class="InputsRecipient" id="InputINN" type="text" placeholder="Укажите ИНН" maxlength="14">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <span class="SpanOformlenyi">Для таможенного оформления</span>
+                                    <label id="LabelErrorINN" class="LabelError" for="InputINN">Проверьте ИНН</label>
+
+                                </div>
+
+                            </div> 
+
+                        </div>
+                        <!-- Блок для мобилки -->
+                        <div class="BlockContentRecipient BlockContentRecipientMobile">
+                                
+                            <div class="BlockInputsCoomon BlockInputsCoomon1">
+
+                                    <label class="LabelPlaceHolder" for="InputFirstName">Имя</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="FirstName" class="InputsRecipient" id="InputFirstName" type="text" placeholder="Укажите имя">
+                                        <img class="ImgLineDownInput" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorFirstName" class="LabelError" for="InputFirstName">Укажите имя</label>
+
+                                </div>
+
+                                <div class="BlockInputsCoomon BlockInputsCoomon2">
+
+                                    <label class="LabelPlaceHolder" for="InputSecondName">Фамилия</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="LastName" class="InputsRecipient" id="InputLastName" type="text" placeholder="Введите фамилию">
+                                        <img class="ImgLineDownInput" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LebelErrorLastName" class="LabelError" for="InputSecondName">Укажите фамилию</label>
+
+                                </div>
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon3">
+
+                                    <label class="LabelPlaceHolder" for="InputEmail">Почта</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="email" class="InputsRecipient" id="InputEmail" type="text" placeholder="Укажите электронную почту">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorEmail" class="LabelError" for="InputEmail">Проверьте адрес электронной почты</label>
+
+                                </div>
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon4">
+
+                                    <label class="LabelPlaceHolder" for="InputPhone">Телефон</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="phone" class="InputsRecipient" id="InputPhone" type="text" placeholder="Укажите номер телефона" maxlength="30">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <label id="LabelErrorPhone" class="LabelError" for="InputPhone">Формат: +9 999 999 99 99</label>
+
+                                </div>
+                                
+                                <div class="BlockInputsCoomon BlockInputsCoomon5">
+
+                                    <label class="LabelPlaceHolder" for="InputINN">ИНН</label>
+
+                                    <div class="BlockInputsRecipient">
+                                        <input name="INN" class="InputsRecipient" id="InputINN" type="text" placeholder="Укажите ИНН" maxlength="14">
+                                        <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
+                                    </div>
+
+                                    <span class="SpanOformlenyi">Для таможенного оформления</span>
+                                    <label id="LabelErrorINN" class="LabelError" for="InputINN">Проверьте ИНН</label>
+
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
-        <div class="SecondBasketBlock">
-            <div>
-                второй элемент
+        <div class="SectionRigthBlock">
+
+            <div class="RightBlockResult">
+
+                <div class="BlockInfoItogo">
+
+                    <div class="BlockTotal">
+
+                        <div class="BlockTitleTotal">
+
+                            <span class="SpanTitleTotal">Итого</span>
+
+                            <div class="BlockTotalResult">
+                                <h2 class="H2TotalResult">2 101 063</h2>
+                                <h3 class="H3TotalResult">сом</h3>
+                            </div>
+
+                        </div>
+
+                        <div class="BloctContentTotal">
+
+                            <div class="CommonBlockTotal">
+
+                                <span class="SpanCommonTotalPrice QuantityProduct">203 товара</span>
+                                <span class="SpanCommonTotalPrice SumProduct">2 302 048 сом</span>
+
+                            </div>
+                            
+                            <div class="CommonBlockTotal">
+
+                                <span class="SpanCommonTotalPrice">Скидка</span>
+                                <span class="SpanCommonTotalPrice SumDiscount">−200 985 сом</span>
+
+                            </div>
+                            
+                            <div class="CommonBlockTotal">
+
+                                <span class="SpanCommonTotalPrice">Доставка</span>
+                                <span class="SpanCommonTotalPrice">Бесплатно</span>
+
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="BlockCoomonTotalDilvery">
+
+                        <div class="BlockTotalDelivery">
+
+                            <div class="BlockTitleTotalDelivery">
+                                <h4 class="SpanTitleTotalDelivery">Доставка в пункт выдачи</h4>
+                                <button class="buttonChangeDelivery buttonChangeDeliveryPan" type="button">
+                                    <img class="IconPan" src="public/icons/icon-pan.svg" alt="pam">
+                                </button>
+                            </div>
+
+                            <div class="BlockStreetTotalDelivery">
+                                <span class="SpanStreetTotalDelivery">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                            </div>
+                            
+                            <div class="BlockDateDelivery">
+                                <span class="SpanDateDilvery">5–8 фев</span>
+                                <img class="LinePink" src="public/icons/LinePink.svg" alt="LinePink">
+                            </div>
+                            
+                        </div>
+
+                        <div class="BlockTotalObratnoDelivery">
+                            <img class="IconPriceShipping" src="public/icons/price shipping.svg" alt="price">
+                            <span class="SpanObratnoDelivery">Обратная доставка товаров на склад при отказе —</span>
+
+                            <div class="BlockSpanBesplatnoTotal">
+                                <span class="SpanBasplatnoTotal">бесплатно</span>
+                                <img class="LineTotalGreen" src="public/icons/Vector_downGrenn.svg" alt="linegreen">
+                                <div id="SpanBasplatnoTotal" class="SpanBasplatnoTotal123"></div>
+
+                                <div class="tooltipBlockBesplatnoTotal">
+                                    <span class="tooltipTextBesplatnoTotal">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="BlockCoomonTotalDilvery2">
+
+                        <div class="BlockTitleOlpata">
+
+                            <div class="TitleOplata">
+                                <h4 class="SpanTitleOplata">Оплата картой</h4>
+                                <button class="buttonChangeOplata2" type="button">
+                                    <img class="IconPan" src="public/icons/icon-pan.svg" alt="pam">
+                                </button>
+                            </div>
+
+                            <div class="BodyOplata">
+                                <div class="TipOplaty">
+                                    <img class="IconOplatyTotal" src="public/icons/CardMir.svg" alt="mir">
+                                </div>
+                                <span class="SpanNumberCardTotal">1234 12•• •••• 1234</span>
+                            </div>
+                            
+                        </div>
+
+                        <div class="BlockTotalCheckbox">
+
+                            <div class="BlockCheckBoxTotal">
+
+                                <div class="BlockFirstCheckBox">
+                                    <label for="CheckboxTotal" class="LabelCheckBoxAll CheckboxTotal">
+                                        <input id="CheckboxTotal" class="InputCheckBox" type="checkbox" name="Выбрать всё">
+                                        <span class="checkmark"></span>
+                                        <span class="SpanCheckboxTotal">Списать оплату сразу</span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <span class="SpanCheckboxTotalInfo">Спишем оплату с карты при получении</span>
+
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="SdelatZakaz">
+
+                    <button type="button" class="BlockButtonZakaz">
+                        <h4 class="TextButtonZakaz">Заказать</h4>
+                        <h4 class="TextButtonZakaz2">Оплатить сом</h4>
+                    </button>
+
+                    <div class="FooterTotalBlock">
+
+                        <img class="IconGalochka" src="public/icons/iconGalochka.svg" alt="galochka">
+
+                        <span class="TextFooterTotal">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+
+                        <img class="DownLineTotalFirst" src="public/icons/iconBigLineFull.svg" alt="line">
+                        <img class="DownLineTotalSecond" src="public/icons/iconBigLineFull.svg" alt="line">
+                        <img class="DownLineTotalThird" src="public/icons/iconLine52.svg" alt="line">
+
+                    </div>
+                    
+                </div>
+
             </div>
+
         </div>
 
     </section>
 
-    <footer class="footer">
+    <footer class="Footer">
 
-        <div class="roundingBottom"></div>
+        <div class="NeedLineGrey"></div>
 
-        <div class="FooterBlock">
-            <div class="InsideFooterBlock">
-                <span class="TextFooterBlock">
-                    © 2022  ООО «Товары и точка»
-                </span>
+        <div class="Rounding2"></div>
+
+        <div class="BlockFooter">
+            <div class="InsideBlockFooter">
+                <div class="BlockSpanFooter">
+                    <span class="SpanFooter">© 2022  ООО «Товары и точка»</span>
+                </div>
             </div>
         </div>
 
     </footer>
-    
+
+    <section class="MobileBlock">
+
+        <img class="IconMobileStyle" src="public/icons/IconHome.svg" alt="">
+        <img class="IconMobileStyle" src="public/icons/iconSearch.svg" alt="">
+        <img id="PinkMobileBasket" class="IconMobileStyle" src="public/icons/IconPinkBasket.svg" alt="">
+        <img class="IconMobileStyle" src="public/icons/iconMobileLike.svg" alt="">
+        <img class="IconMobileStyle" src="public/icons/iconMobileProfile.svg" alt="">
+        <label class="LableMobileBasket" for="PinkMobileBasket"><span class="SpanLabelMobile">3</span></label>
+
+    </section>
+
 </body>
 </html>
