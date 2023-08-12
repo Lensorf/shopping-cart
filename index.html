@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script defer src="js/index.js"></script>
 </head>
-<body>
+<body class="body">
 
     <header class="Header">
 
@@ -102,7 +102,7 @@
 
                     <div class="ContentFirstBlock">
 
-                        <div class="InsideContentBlocks">
+                        <div class="InsideContentBlocks InsideContentBlocksFirst">
 
                             <div class="ContainerFirstContentBlock">
 
@@ -186,7 +186,7 @@
 
                                     <div class="BlockInconsLikeDelete">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon1" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
 
                                 </div>
@@ -233,7 +233,7 @@
 
                         </div>
 
-                        <div class="InsideContentBlocks">
+                        <div class="InsideContentBlocks InsideContentBlocksSecond">
 
                             <div class="ContainerFirstContentBlock ContainerFirstContentBlockMobile">
 
@@ -253,8 +253,8 @@
     
                                         <div class="BlockResultNonSkidka BlockResultNonSkidka2">
 
-                                            <div>
-                                                <span id="SpanResultNonSkidka2Mobile" class="SpanResultNonSkidka2">2 300 047 сом</span>
+                                            <div class="normalyBlock">
+                                                <span id="SpanResultNonSkidka2Mobile" class="SpanResultNonSkidka2">2 300 047</span>
                                                 <span class="SpanResultNonSkidka2 SpanResultNonSkidka2NonDisplay">сом</span>
                                             </div>
     
@@ -312,7 +312,7 @@
 
                                     <div class="BlockInconsLikeDelete">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon2" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
 
                                 </div>
@@ -325,7 +325,7 @@
                                     </div>
 
                                     <div class="BlockResultNonSkidka BlockResultNonSkidka2">
-                                        <div>
+                                        <div class="normalyBlock">
                                             <span id="SpanResultNonSkidka2Mobile" class="SpanResultNonSkidka2 SpanResultNonSkidkaResultSecond">2 300 047</span>
                                             <span class="SpanResultNonSkidka2 SpanResultNonSkidka2NonDisplay">сом</span>
                                         </div>
@@ -357,7 +357,7 @@
 
                         </div>
 
-                        <div class="InsideContentBlocks">
+                        <div class="InsideContentBlocks InsideContentBlocksThird">
 
                             <div class="ContainerFirstContentBlock">
 
@@ -394,7 +394,7 @@
 
                                     <div class="FooterContainerInfoZakaz FooterContainerInfoZakazMobile">
 
-                                        <div class="FooterUpContainer">
+                                        <div id="FooterUpContainer3" class="FooterUpContainer">
                                             <span class="FooterUpSpan3">Коледино WB</span>
                                         </div>
 
@@ -434,7 +434,7 @@
 
                                     <div class="BlockInconsLikeDelete BlockInconsLikeDeleteMobile">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon3" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
 
                                 </div>
@@ -498,7 +498,7 @@
 
                     <div class="InsideSecondBlockSecondContentBlock">
 
-                        <div class="AbsentInfoCommonBlock">
+                        <div class="AbsentInfoCommonBlock AbsentInfoCommonBlockFirst">
 
                             <div class="InsideAbsentInfoFirstBlock">
 
@@ -524,7 +524,7 @@
                                 <div class="AbsentInfoIconsBlock">
                                     <div class="InsideAbsentIconsBlock InsideAbsentIconsBlockFirst">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon1" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
                                 </div>
                             </div>
@@ -534,7 +534,7 @@
 
                         </div>
 
-                        <div class="AbsentInfoCommonBlock">
+                        <div class="AbsentInfoCommonBlock AbsentInfoCommonBlockSecond">
 
                             <div class="InsideAbsentInfoFirstBlock">
 
@@ -557,14 +557,14 @@
                                 <div class="AbsentSecondInfoIconsBlock">
                                     <div class="InsideAbsentIconsBlock">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon2" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
 
-                        <div class="AbsentInfoCommonBlock">
+                        <div class="AbsentInfoCommonBlock AbsentInfoCommonBlockThird">
 
                             <div class="InsideAbsentInfoFirstBlock ThirdInsideAbsentInfoFirstBlock">
 
@@ -583,7 +583,7 @@
                                 <div class="AbsentSecondInfoIconsBlock">
                                     <div class="InsideAbsentIconsBlock InsideAbsentIconsBlockThird">
                                         <button class="ButtonLikeIcon" type="button"><div class="ImgLikeIcon"></div></button>
-                                        <button class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
+                                        <button id="ButtonDeleteIcon3" class="ButtonDeleteIcon" type="button"><div class="ImgDeleteIcon"></div></button>
                                     </div>
                                 </div>
                             </div>
@@ -763,16 +763,22 @@
                                         <div class="CoomonBlockDeliveryInsideMobile">
 
                                             <div class="BlockDeliveryImageMobile">
-    
-                                                <img class="ImageDevileryCoomon" id="FirstImageDelivery" src="public/img/FutbolkaBIG.png" alt="FirstImageDelivery">
-                                                <label id="LableFirstImageDelivery" class="LabelFirstDelivery" for="FirstImageDelivery"><span class="FirstSpanLableDelivery">2</span></label>
-    
-                                                <img class="ImageDevileryCoomon" id="SecondImageDelivery" src="public/img/PhoneBig.png" alt="SecondImageDelivery">
-                                                <label id="LabelSecondImageDelivery" class="LabelSecondDelivery" for="SecondImageDelivery"><span class="SecondSpanLableDelivery">184</span></label>
-    
-                                                <img class="ImageDevileryCoomon SecondImageDelivery" id="ThirdImageDelivery" src="public/img/PanBig.png" alt="ThirdImageDelivery">
-                                                <label id="LabelThirdImageDelivery" class="LabelFirstDelivery" for="ThirdImageDelivery"><span class="ThirdSpanLableDelivery">2</span></label>
-    
+
+                                                <div>
+                                                    <img class="ImageDevileryCoomon" id="FirstImageDelivery" src="public/img/FutbolkaBIG.png" alt="FirstImageDelivery">
+                                                    <label id="LableFirstImageDelivery" class="LabelFirstDelivery" for="FirstImageDelivery"><span class="FirstSpanLableDelivery">2</span></label>
+                                                </div>
+
+                                                <div>
+                                                    <img class="ImageDevileryCoomon" id="SecondImageDelivery" src="public/img/PhoneBig.png" alt="SecondImageDelivery">
+                                                    <label id="LabelSecondImageDelivery" class="LabelSecondDelivery" for="SecondImageDelivery"><span class="SecondSpanLableDelivery">184</span></label>
+                                                </div>
+
+                                                <div>
+                                                    <img class="ImageDevileryCoomon SecondImageDelivery" id="ThirdImageDelivery" src="public/img/PanBig.png" alt="ThirdImageDelivery">
+                                                    <label id="LabelThirdImageDelivery" class="LabelFirstDelivery" for="ThirdImageDelivery"><span class="ThirdSpanLableDelivery">2</span></label>
+                                                </div>
+
                                             </div>
     
                                         </div>
@@ -822,7 +828,6 @@
                                     <div class="CoomonBlockDeliveryInside BlockDisplayNoneChangeCheckbox">
 
                                         <div class="BlockDeliveryImage">
-
                                             <img class="ImageDevileryCoomon" id="FirstImageDelivery" src="public/img/FutbolkaBIG.png" alt="FirstImageDelivery">
                                             <label id="LableFirstImageDelivery" class="LabelFirstDelivery" for="FirstImageDelivery"><span class="FirstSpanLableDelivery">2</span></label>
 

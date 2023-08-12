@@ -9,6 +9,8 @@ const firstCheckBox = document.querySelector('#FirstCheckBox1');
 const secondCheckBox = document.querySelector('#FirstCheckBox2');
 const thirdCheckBox = document.querySelector('#FirstCheckBox3');
 const CheckboxTotal = document.querySelector('#CheckboxTotal');
+// Кнопки на удаление
+const allButtonDelete = document.querySelectorAll('.ButtonDeleteIcon');
 
 const mainBlock = document.querySelector('.ContentFirstBlock');
 const allCheckbox = mainBlock.querySelectorAll('input[type=checkbox]');
@@ -430,13 +432,15 @@ for (let i = 0; i < allPlus.length; i++) {
       const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / num);
       num += 1;
       if (num >= 185) {
+        const spanDostavka = document.querySelector('.SpanDateDilvery');
+        spanDostavka.innerHTML = '5–8 фев';
         if (num === 185) {
           for (let y = 0; y < lableDown.length; y++) {
-            lableDown[y].style.display = 'none';
+            lableDown[y].style.visibility = 'hidden';
           }
         } if (num > 185) {
           for (let a = 0; a < lableDown.length; a++) {
-            lableDown[a].style.display = 'flex';
+            lableDown[a].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.SpanLastLabelDelivery');
             for (let k = 0; k < spanAll.length; k++) {
               spanAll[k].innerHTML = num - 184;
@@ -448,13 +452,15 @@ for (let i = 0; i < allPlus.length; i++) {
         }
       }
       if (num < 185) {
+        const spanDostavka = document.querySelector('.SpanDateDilvery');
+        spanDostavka.innerHTML = '5–6 фев';
         if (num === 1) {
           for (let w = 0; w < secondLable.length; w++) {
-            secondLable[w].style.display = 'none';
+            secondLable[w].style.visibility = 'hidden';
           }
         } else {
           for (let w = 0; w < secondLable.length; w++) {
-            secondLable[w].style.display = 'flex';
+            secondLable[w].style.visibility = 'visible';
           }
         }
         const spanAll = document.querySelectorAll('.SecondSpanLableDelivery');
@@ -535,7 +541,7 @@ for (let i = 0; i < allPlus.length; i++) {
           num += 1;
           if (num === 1) {
             for (let w = 0; w < firstLable.length; w++) {
-              firstLable[w].style.display = 'none';
+              firstLable[w].style.visibility = 'hidden';
               const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
               for (let z = 0; z < spanAll.length; z++) {
                 spanAll[z].innerHTML = num;
@@ -543,7 +549,7 @@ for (let i = 0; i < allPlus.length; i++) {
             }
           } else {
             for (let w = 0; w < firstLable.length; w++) {
-              firstLable[w].style.display = 'flex';
+              firstLable[w].style.visibility = 'visible';
               const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
               for (let z = 0; z < spanAll.length; z++) {
                 spanAll[z].innerHTML = num;
@@ -614,7 +620,7 @@ for (let i = 0; i < allPlus.length; i++) {
           num += 1;
           if (num === 1) {
             for (let w = 0; w < thirdLable.length; w++) {
-              thirdLable[w].style.display = 'none';
+              thirdLable[w].style.visibility = 'hidden';
               const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
               for (let y = 0; y < spanAll.length; y++) {
                 spanAll[y].innerHTML = num;
@@ -622,7 +628,7 @@ for (let i = 0; i < allPlus.length; i++) {
             }
           } else {
             for (let w = 0; w < thirdLable.length; w++) {
-              thirdLable[w].style.display = 'flex';
+              thirdLable[w].style.visibility = 'visible';
               const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
               for (let k = 0; k < spanAll.length; k++) {
                 spanAll[k].innerHTML = num;
@@ -702,7 +708,7 @@ for (let i = 0; i < allMinus.length; i++) {
         num -= 1;
         if (num === 1) {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'none';
+            firstLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = num;
@@ -710,7 +716,7 @@ for (let i = 0; i < allMinus.length; i++) {
           }
         } else {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'flex';
+            firstLable[w].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = num;
@@ -780,13 +786,15 @@ for (let i = 0; i < allMinus.length; i++) {
       const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / num);
       num -= 1;
       if (num >= 185) {
+        const spanDostavka = document.querySelector('.SpanDateDilvery');
+        spanDostavka.innerHTML = '5–8 фев';
         if (num === 185) {
           for (let y = 0; y < lableDown.length; y++) {
-            lableDown[y].style.display = 'none';
+            lableDown[y].style.visibility = 'hidden';
           }
         } if (num > 185) {
           for (let a = 0; a < lableDown.length; a++) {
-            lableDown[a].style.display = 'flex';
+            lableDown[a].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.SpanLastLabelDelivery');
             for (let k = 0; k < spanAll.length; k++) {
               spanAll[k].innerHTML = num - 184;
@@ -798,13 +806,15 @@ for (let i = 0; i < allMinus.length; i++) {
         }
       }
       if (num < 185) {
+        const spanDostavka = document.querySelector('.SpanDateDilvery');
+        spanDostavka.innerHTML = '5–6 фев';
         if (num === 1) {
           for (let w = 0; w < secondLable.length; w++) {
-            secondLable[w].style.display = 'none';
+            secondLable[w].style.visibility = 'hidden';
           }
         } else {
           for (let w = 0; w < secondLable.length; w++) {
-            secondLable[w].style.display = 'flex';
+            secondLable[w].style.visibility = 'visible';
           }
         }
         const spanAll = document.querySelectorAll('.SecondSpanLableDelivery');
@@ -879,7 +889,7 @@ for (let i = 0; i < allMinus.length; i++) {
         num -= 1;
         if (num === 1) {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'none';
+            thirdLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = num;
@@ -887,7 +897,7 @@ for (let i = 0; i < allMinus.length; i++) {
           }
         } else {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'flex';
+            thirdLable[w].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = num;
@@ -968,7 +978,7 @@ for (let i = 0; i < allInputs.length; i++) {
         allInputs[i].value = allInputs[i].min;
         if (Number(allInputs[i].value) === 1) {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'none';
+            firstLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -976,7 +986,7 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         } else {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'flex';
+            firstLable[w].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1041,7 +1051,7 @@ for (let i = 0; i < allInputs.length; i++) {
         allInputs[i].value = allInputs[i].max;
         if (Number(allInputs[i].value) === 1) {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'none';
+            firstLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1049,7 +1059,7 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         } else {
           for (let w = 0; w < firstLable.length; w++) {
-            firstLable[w].style.display = 'flex';
+            firstLable[w].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.FirstSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1118,13 +1128,15 @@ for (let i = 0; i < allInputs.length; i++) {
         const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / Number(localStorage.secondQuantitySum));
         allInputs[i].value = allInputs[i].min;
         if (allInputs[i].value >= 185) {
+          const spanDostavka = document.querySelector('.SpanDateDilvery');
+          spanDostavka.innerHTML = '5–8 фев';
           if (allInputs[i].value === 185) {
             for (let y = 0; y < lableDown.length; y++) {
-              lableDown[y].style.display = 'none';
+              lableDown[y].style.visibility = 'hidden';
             }
           } if (allInputs[i].value > 185) {
             for (let a = 0; a < lableDown.length; a++) {
-              lableDown[a].style.display = 'flex';
+              lableDown[a].style.visibility = 'visible';
               const spanAll = document.querySelectorAll('.SpanLastLabelDelivery');
               for (let k = 0; k < spanAll.length; k++) {
                 spanAll[k].innerHTML = allInputs[i].value - 184;
@@ -1136,13 +1148,15 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         }
         if (allInputs[i].value < 185) {
+          const spanDostavka = document.querySelector('.SpanDateDilvery');
+          spanDostavka.innerHTML = '5–6 фев';
           if (Number(allInputs[i].value) === 1) {
             for (let w = 0; w < secondLable.length; w++) {
-              secondLable[w].style.display = 'none';
+              secondLable[w].style.visibility = 'hidden';
             }
           } else {
             for (let w = 0; w < secondLable.length; w++) {
-              secondLable[w].style.display = 'flex';
+              secondLable[w].style.visibility = 'visible';
             }
           }
           const spanAll = document.querySelectorAll('.SecondSpanLableDelivery');
@@ -1209,13 +1223,15 @@ for (let i = 0; i < allInputs.length; i++) {
         const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / Number(localStorage.secondQuantitySum));
         allInputs[i].value = value;
         if (allInputs[i].value >= 185) {
+          const spanDostavka = document.querySelector('.SpanDateDilvery');
+          spanDostavka.innerHTML = '5–8 фев';
           if (allInputs[i].value === 185) {
             for (let y = 0; y < lableDown.length; y++) {
-              lableDown[y].style.display = 'none';
+              lableDown[y].style.visibility = 'hidden';
             }
           } if (allInputs[i].value > 185) {
             for (let a = 0; a < lableDown.length; a++) {
-              lableDown[a].style.display = 'flex';
+              lableDown[a].style.visibility = 'visible';
               const spanAll2 = document.querySelectorAll('.SecondSpanLableDelivery');
               for (let z = 0; z < spanAll2.length; z++) {
                 spanAll2[z].innerHTML = 184;
@@ -1234,13 +1250,15 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         }
         if (allInputs[i].value < 185) {
+          const spanDostavka = document.querySelector('.SpanDateDilvery');
+          spanDostavka.innerHTML = '5–6 фев';
           if (Number(allInputs[i].value) === 1) {
             for (let w = 0; w < secondLable.length; w++) {
-              secondLable[w].style.display = 'none';
+              secondLable[w].style.visibility = 'hidden';
             }
           } else {
             for (let w = 0; w < secondLable.length; w++) {
-              secondLable[w].style.display = 'flex';
+              secondLable[w].style.visibility = 'visible';
             }
           }
           const spanAll = document.querySelectorAll('.SecondSpanLableDelivery');
@@ -1312,7 +1330,7 @@ for (let i = 0; i < allInputs.length; i++) {
         allInputs[i].value = allInputs[i].min;
         if (Number(allInputs[i].value) === 1) {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'none';
+            thirdLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1320,7 +1338,7 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         } else {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'flex';
+            thirdLable[w].style.visibility = 'visible';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1385,7 +1403,7 @@ for (let i = 0; i < allInputs.length; i++) {
         allInputs[i].value = allInputs[i].max;
         if (Number(allInputs[i].value) === 1) {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'none';
+            thirdLable[w].style.visibility = 'hidden';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1393,7 +1411,7 @@ for (let i = 0; i < allInputs.length; i++) {
           }
         } else {
           for (let w = 0; w < thirdLable.length; w++) {
-            thirdLable[w].style.display = 'flex';
+            thirdLable[w].style.visibility = 'visisble';
             const spanAll = document.querySelectorAll('.ThirdSpanLableDelivery');
             for (let z = 0; z < spanAll.length; z++) {
               spanAll[z].innerHTML = allInputs[i].value;
@@ -1461,7 +1479,19 @@ for (let i = 0; i < allInputs.length; i++) {
 for (let i = 0; i < CheckBoxes.length; i++) {
   CheckBoxes[i].addEventListener('click', async (e) => {
     const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
-    mainCheckbox.checked = checkedCount === 3;
+    console.log(checkedCount);
+    mainCheckbox.checked = checkedCount === CheckBoxes.length;
+    if (checkedCount === 0) {
+      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
+      for (let x = 0; x < blockNone.length; x++) {
+        blockNone[x].style.display = 'none';
+      }
+    } else {
+      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
+      for (let x = 0; x < blockNone.length; x++) {
+        blockNone[x].style.display = 'flex';
+      }
+    }
     let { id } = e.target;
     id = id.replace('FirstCheckBox', '');
     if (id === '1') {
@@ -1470,6 +1500,21 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const SpanNumberKolVo1 = Number(firstQuantity.value);
         const SpanResultSumNoMobile1 = Number(document.querySelector('#SpanResultSumNoMobile1').innerHTML?.split(' ')?.join(''));
         const SpanResultNonSkidka1Mobile = Number(document.querySelector('#SpanResultNonSkidka1Mobile').innerHTML?.split(' ').join(''));
+        const imgFirst = document.querySelectorAll('#FirstImageDelivery');
+        const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
+        const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+        for (let z = 0; z < imgFirst.length; z++) {
+          if (secondCheckBox.checked) {
+            blockNoneChange[z].style.display = 'flex';
+          } else {
+            blockNoneChange[z].style.display = 'none';
+          }
+          imgFirst[z].style.display = 'flex';
+          LableSecondImageDelivery[z].style.left = '68px';
+          if (SpanNumberKolVo1 === 2) {
+            LableFirstImageDelivery[z].style.visibility = 'visible';
+          }
+        }
         localStorage.firstQuantitySum = SpanNumberKolVo1;
         localStorage.firstSum = SpanResultSumNoMobile1;
         localStorage.FirstPriceNonDiscount = SpanResultNonSkidka1Mobile;
@@ -1486,6 +1531,19 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         allInputs[i].removeAttribute('disabled');
         allMinus[i].removeAttribute('disabled');
       } else {
+        const imgFirst = document.querySelectorAll('#FirstImageDelivery');
+        const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
+        const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+        for (let z = 0; z < imgFirst.length; z++) {
+          imgFirst[z].style.display = 'none';
+          if (secondCheckBox.checked) {
+            blockNoneChange[z].style.display = 'flex';
+          } else {
+            blockNoneChange[z].style.display = 'none';
+          }
+          LableSecondImageDelivery[z].style.left = '18px';
+          LableFirstImageDelivery[z].style.visibility = 'hidden';
+        }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
         localStorage.sumNonDiscount -= Number(localStorage.FirstPriceNonDiscount);
         localStorage.allQuantity -= Number(localStorage.firstQuantitySum);
@@ -1509,6 +1567,18 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const SpanNumberKolVo2 = Number(secondQuantity.value);
         const SpanResultSumNoMobile2 = Number(document.querySelector('#SpanResultSumNoMobile2').innerHTML?.split(' ')?.join(''));
         const SecondPriceWithoutDiscount2 = Number(document.querySelector('.SpanResultNonSkidkaResultSecond').innerHTML?.split(' ')?.join(''));
+        const imgSecond = document.querySelectorAll('#SecondImageDelivery');
+        const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+        const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        for (let z = 0; z < imgSecond.length; z++) {
+          imgSecond[z].style.display = 'flex';
+          imgThird[z].style.margin = '-1px 1px 0px 0px';
+          if (SpanNumberKolVo2 > 184) {
+            blockNoneChange[z].style.display = 'flex';
+          }
+          LableSecondImageDelivery[z].style.display = 'flex';
+          LableSecondImageDelivery[z].style.visibility = 'visible';
+        }
         localStorage.secondQuantitySum = SpanNumberKolVo2;
         localStorage.secondSum = SpanResultSumNoMobile2;
         localStorage.SecondPriceNonDiscount = SecondPriceWithoutDiscount2;
@@ -1525,6 +1595,16 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         allInputs[i].removeAttribute('disabled');
         allMinus[i].removeAttribute('disabled');
       } else {
+        const imgSecond = document.querySelectorAll('#SecondImageDelivery');
+        const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+        const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        for (let z = 0; z < imgSecond.length; z++) {
+          imgThird[z].style.margin = '-1px 1px 0px -0px';
+          blockNoneChange[z].style.display = 'none';
+          imgSecond[z].style.display = 'none';
+          LableSecondImageDelivery[z].style.display = 'none';
+          LableSecondImageDelivery[z].style.visibility = 'hidden';
+        }
         localStorage.sumResultTotal -= Number(localStorage.secondSum);
         localStorage.sumNonDiscount -= Number(localStorage.SecondPriceNonDiscount);
         localStorage.allQuantity -= Number(localStorage.secondQuantitySum);
@@ -1548,6 +1628,20 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const SpanNumberKolVo3 = Number(thirdQuantitySum);
         const onePieceThird3 = Number(document.querySelector('#SpanResultSumNoMobile3').innerHTML?.split(' ')?.join(''));
         const ThirdPriceWithoutDiscount3 = Number(document.querySelector('.SpanResultNonSkidka3').innerHTML?.split(' ')?.join(''));
+
+        const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
+        for (let z = 0; z < imgThird.length; z++) {
+          imgThird[z].style.display = 'flex';
+          if (secondCheckBox.checked) {
+            blockNoneChange[z].style.display = 'flex';
+          } else {
+            blockNoneChange[z].style.display = 'none';
+          }
+          if (SpanNumberKolVo3 === 2) {
+            LableThirdImageDelivery[z].style.visibility = 'visible';
+          }
+        }
         localStorage.thirdQuantitySum = Number(SpanNumberKolVo3);
         localStorage.thirdSum = Number(onePieceThird3);
         localStorage.ThirdPriceNonDiscount = Number(ThirdPriceWithoutDiscount3);
@@ -1564,6 +1658,17 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         allInputs[i].removeAttribute('disabled');
         allMinus[i].removeAttribute('disabled');
       } else {
+        const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
+        for (let z = 0; z < imgThird.length; z++) {
+          imgThird[z].style.display = 'none';
+          if (secondCheckBox.checked) {
+            blockNoneChange[z].style.display = 'flex';
+          } else {
+            blockNoneChange[z].style.display = 'none';
+          }
+          LableThirdImageDelivery[z].style.visibility = 'hidden';
+        }
         localStorage.sumResultTotal -= Number(localStorage.thirdSum);
         localStorage.sumNonDiscount -= Number(localStorage.ThirdPriceNonDiscount);
         localStorage.allQuantity -= Number(localStorage.thirdQuantitySum);
@@ -1622,7 +1727,6 @@ mainCheckbox.addEventListener('click', async (e) => {
       for (let x = 0; x < blockNone.length; x++) {
         blockNone[x].style.display = 'flex';
       }
-      console.log(localStorage);
       if (Number(localStorage.firstQuantitySum) === 1) {
         allMinus[0].setAttribute('disabled', 'true');
         allPlus[0].removeAttribute('disabled');
@@ -1695,3 +1799,247 @@ CheckboxTotal.addEventListener('click', async (e) => {
     changeButtonZakaz.style.display = 'flex';
   }
 });
+
+for (let i = 0; i < allButtonDelete.length; i++) {
+  allButtonDelete[i].addEventListener('click', async (e) => {
+    let { id } = e.target.parentNode;
+    id = id.replace('ButtonDeleteIcon', '');
+    if (id === '1') {
+      const firstBlock = document.querySelector('.InsideContentBlocksFirst');
+      const fristBlockDown = document.querySelector('.AbsentInfoCommonBlockFirst');
+      const firstKolvo = document.querySelector('.SpanNumberKolVo1');
+      const secondKolvo = document.querySelector('.SpanNumberKolVo2').value;
+      const thirdKolvo = document.querySelector('.SpanNumberKolVo3');
+      const onePieceFirst1 = document.querySelector('#SpanResultSumNoMobile1');
+      const FirstPriceWithoutDiscount1 = document.querySelector('.SpanResultNonSkidka1');
+
+      const imgFirst = document.querySelectorAll('#FirstImageDelivery');
+      const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
+      const SpanLabelIconBasket = document.querySelector('.SpanLabelIconBasket');
+      const SpanLabelMobile = document.querySelector('.SpanLabelMobile');
+      const SumMobile = Number(SpanLabelMobile.innerHTML) - 1;
+      const SumBasket = Number(SpanLabelIconBasket.innerHTML) - 1;
+      const LabelIconBasket = document.querySelector('.LabelIconBasket');
+      const LableMobileBasket = document.querySelector('.LableMobileBasket');
+      const SecondImageDelivery = document.querySelectorAll('#SecondImageDelivery');
+      const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+      const SpanNonHaveTovar = document.querySelector('.SpanNonHaveTovar');
+      const nas = Number(SpanNonHaveTovar.innerHTML.split(' ').filter((x) => x == +x).join('')) - 1;
+      if (nas === 1) {
+        SpanNonHaveTovar.innerHTML = `Отсутствует · ${nas} товар`;
+      } else {
+        SpanNonHaveTovar.innerHTML = `Отсутствуют · ${nas} товара`;
+      }
+      firstBlock.style.display = 'none';
+      fristBlockDown.style.display = 'none';
+      const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+      for (let g = 0; g < imgThird.length; g++) {
+        if (secondKolvo != 0) {
+          imgThird[g].style.margin = '-1px 1px 0px -0px';
+        } else {
+          imgThird[g].style.margin = '-1px 1px 0px 0px';
+        }
+      }
+      for (let z = 0; z < imgFirst.length; z++) {
+        SecondImageDelivery[z].style.margin = '-1px 1px 0px 0px';
+        LableSecondImageDelivery[z].style.left = '20px';
+        imgFirst[z].style.display = 'none';
+        LableFirstImageDelivery[z].style.display = 'none';
+      }
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceFirst.innerHTML?.split(' ')?.join(''));
+      resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(FirstPriceWithoutDiscount1.innerHTML?.split(' ')?.join(''));
+      SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+      SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(firstKolvo.value);
+      QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
+      spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      if (Number(SpanLabelIconBasket.innerHTML) === 1) {
+        const IconeBasket = document.querySelector('#IconeBasket');
+        IconeBasket.style.margin = '0px 0px 0px 2px';
+        LabelIconBasket.style.display = 'none';
+        LableMobileBasket.style.display = 'none';
+      } else {
+        SpanLabelMobile.innerHTML = `${SumMobile}`;
+        SpanLabelIconBasket.innerHTML = `${SumBasket}`;
+      }
+
+      firstKolvo.value = 0;
+      onePieceFirst1.innerHTML = 0;
+      FirstPriceWithoutDiscount1.innerHTML = 0;
+      localStorage.firstQuantitySum = 0;
+      localStorage.FirstPriceNonDiscount = 0;
+      localStorage.firstSum = 0;
+      if (Number(thirdKolvo.value) === 0 && Number(secondKolvo) === 0 && Number(firstKolvo.value) === 0) {
+        const Section = document.querySelector('.Section');
+        Section.style.height = `${Section.scrollHeight}px`;
+        const SectionLeftBlock = document.querySelector('.SectionLeftBlock');
+        const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
+        SectionLeftBlock.style.display = 'none';
+        SectionRigthBlock.style.display = 'none';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        Section.style.justifyContent = 'center';
+        Section.style.alignItems = 'center';
+        Section.innerHTML = divInfo;
+        console.log('firstheelo');
+      }
+    }
+    if (id === '2') {
+      const secondBlock = document.querySelector('.InsideContentBlocksSecond');
+      const secondBlockDown = document.querySelector('.AbsentInfoCommonBlockSecond');
+      const firstKolvo = document.querySelector('.SpanNumberKolVo1').value;
+      const secondKolvo = document.querySelector('.SpanNumberKolVo2');
+      const thirdKolvo = document.querySelector('.SpanNumberKolVo3');
+      const onePieceSecond1 = document.querySelector('#SpanResultSumNoMobile2');
+      const SecondPriceWithoutDiscount1 = document.querySelector('.SpanResultNonSkidka2');
+
+      const imgSecond = document.querySelectorAll('#SecondImageDelivery');
+      const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+      const blockNone = document.querySelectorAll('.blockNoneChange');
+      const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+      for (let x = 0; x < blockNone.length; x++) {
+        blockNone[x].style.display = 'none';
+        if (firstKolvo != 0) {
+          imgThird[x].style.margin = '-1px 1px 0px -0px';
+        } else {
+          imgThird[x].style.margin = '-1px 1px 0px -0px';
+        }
+        const spanDostavka = document.querySelector('.SpanDateDilvery');
+        spanDostavka.innerHTML = '5–6 фев';
+      }
+      for (let k = 0; k < imgSecond.length; k++) {
+        imgSecond[k].style.display = 'none';
+        LableSecondImageDelivery[k].style.display = 'none';
+      }
+
+      const SpanLabelIconBasket = document.querySelector('.SpanLabelIconBasket');
+      const SpanLabelMobile = document.querySelector('.SpanLabelMobile');
+      const SumMobile = Number(SpanLabelMobile.innerHTML) - 1;
+      const SumBasket = Number(SpanLabelIconBasket.innerHTML) - 1;
+      const LabelIconBasket = document.querySelector('.LabelIconBasket');
+      const LableMobileBasket = document.querySelector('.LableMobileBasket');
+      const SpanNonHaveTovar = document.querySelector('.SpanNonHaveTovar');
+      const nas = Number(SpanNonHaveTovar.innerHTML.split(' ').filter((x) => x == +x).join('')) - 1;
+      if (nas === 1) {
+        SpanNonHaveTovar.innerHTML = `Отсутствует · ${nas} товар`;
+      } else {
+        SpanNonHaveTovar.innerHTML = `Отсутствуют · ${nas} товара`;
+      }
+      secondBlock.style.display = 'none';
+      secondBlockDown.style.display = 'none';
+
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceSecond1.innerHTML?.split(' ')?.join(''));
+      resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(SecondPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
+      SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+      SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(secondKolvo.value);
+      QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
+      spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+
+      if (Number(SpanLabelIconBasket.innerHTML) === 1) {
+        const IconeBasket = document.querySelector('#IconeBasket');
+        IconeBasket.style.margin = '0px 0px 0px 2px';
+        LabelIconBasket.style.display = 'none';
+        LableMobileBasket.style.display = 'none';
+      } else {
+        SpanLabelMobile.innerHTML = `${SumMobile}`;
+        SpanLabelIconBasket.innerHTML = `${SumBasket}`;
+      }
+
+      secondKolvo.value = 0;
+      onePieceSecond1.innerHTML = 0;
+      SecondPriceWithoutDiscount1.innerHTML = 0;
+      localStorage.secondQuantitySum = 0;
+      localStorage.SecondPriceNonDiscount = 0;
+      localStorage.secondSum = 0;
+      if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo) === 0) {
+        const Section = document.querySelector('.Section');
+        Section.style.height = `${Section.scrollHeight}px`;
+        const SectionLeftBlock = document.querySelector('.SectionLeftBlock');
+        const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
+        SectionLeftBlock.style.display = 'none';
+        SectionRigthBlock.style.display = 'none';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        Section.style.justifyContent = 'center';
+        Section.style.alignItems = 'center';
+        Section.innerHTML = divInfo;
+      }
+    }
+    if (id === '3') {
+      const thirdBlock = document.querySelector('.InsideContentBlocksThird');
+      const thirdBlockDown = document.querySelector('.AbsentInfoCommonBlockThird');
+      const firstKolvo = document.querySelector('.SpanNumberKolVo1');
+      const secondKolvo = document.querySelector('.SpanNumberKolVo2');
+      const thirdKolvo = document.querySelector('.SpanNumberKolVo3');
+      const onePieceThird1 = document.querySelector('#SpanResultSumNoMobile3');
+      const ThirdPriceWithoutDiscount1 = document.querySelector('.SpanResultNonSkidka3');
+
+      const SpanLabelIconBasket = document.querySelector('.SpanLabelIconBasket');
+      const SpanLabelMobile = document.querySelector('.SpanLabelMobile');
+      const SumMobile = Number(SpanLabelMobile.innerHTML) - 1;
+      const SumBasket = Number(SpanLabelIconBasket.innerHTML) - 1;
+      const LabelIconBasket = document.querySelector('.LabelIconBasket');
+      const LableMobileBasket = document.querySelector('.LableMobileBasket');
+
+      const SpanNonHaveTovar = document.querySelector('.SpanNonHaveTovar');
+      const nas = Number(SpanNonHaveTovar.innerHTML.split(' ').filter((x) => x == +x).join('')) - 1;
+      if (nas === 1) {
+        SpanNonHaveTovar.innerHTML = `Отсутствует · ${nas} товар`;
+      } else {
+        SpanNonHaveTovar.innerHTML = `Отсутствуют · ${nas} товара`;
+      }
+
+      const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+      const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
+      for (let x = 0; x < imgThird.length; x++) {
+        imgThird[x].style.display = 'none';
+        LableThirdImageDelivery[x].style.display = 'none';
+      }
+
+      thirdBlock.style.display = 'none';
+      thirdBlockDown.style.display = 'none';
+
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceThird1.innerHTML?.split(' ')?.join(''));
+      resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(ThirdPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
+      SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
+      SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(thirdKolvo.value);
+      QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
+      spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+
+      if (Number(SpanLabelIconBasket.innerHTML) === 1) {
+        const IconeBasket = document.querySelector('#IconeBasket');
+        IconeBasket.style.margin = '0px 0px 0px 2px';
+        LabelIconBasket.style.display = 'none';
+        LableMobileBasket.style.display = 'none';
+      } else {
+        SpanLabelMobile.innerHTML = `${SumMobile}`;
+        SpanLabelIconBasket.innerHTML = `${SumBasket}`;
+      }
+
+      thirdKolvo.value = 0;
+      onePieceThird1.innerHTML = 0;
+      ThirdPriceWithoutDiscount1.innerHTML = 0;
+      localStorage.thirdQuantitySum = 0;
+      localStorage.ThirdPriceNonDiscount = 0;
+      localStorage.thirdSum = 0;
+      if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo.value) === 0) {
+        const Section = document.querySelector('.Section');
+        Section.style.height = `${Section.scrollHeight}px`;
+        const SectionLeftBlock = document.querySelector('.SectionLeftBlock');
+        const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
+        SectionLeftBlock.style.display = 'none';
+        SectionRigthBlock.style.display = 'none';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        Section.style.justifyContent = 'center';
+        Section.style.alignItems = 'center';
+        Section.innerHTML = divInfo;
+      }
+    }
+  });
+}

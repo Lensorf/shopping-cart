@@ -136,13 +136,80 @@ legend {
 
     body {
         display: flex;
-        width: 1400px;
         flex-direction: column;
         align-items: flex-start;
         font-family: "SegoeUISemiBold", sans-serif;
         position: relative;
     }
 
+    /* Добавляется блок если ничего нет начало */
+    .blockNonHaveItems {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 1200px;
+        height: 600px;
+        gap: 20px;
+        padding: 16px;
+        margin: 0px 16px;
+        border-radius: 16px;
+        background: var(--background-white, #FFF);
+        box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 30%), 0px 2px 10px 0px rgb(0 0 0 / 15%);
+        justify-content: space-evenly;
+        align-items: center;
+        top: -40px;
+    }
+    
+    .blockBodyNewBlock {
+        display: flex;
+        width: 900px;
+        height: 120px;
+        gap: 24px;
+        padding: 16px;
+        margin: 0px 16px;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    .newSpanNewBlocks {
+        display: flex;
+        font-family: "SegoeUIBold", sans-serif;
+        font-size: 28px;
+        line-height: 24px;
+    }
+
+    .SpanBodyNewBlock {
+        display: flex;
+        font-family: "SegoeUISemiBold", sans-serif;
+        font-size: 24px;
+        line-height: 24px;
+        color: var(--light-system-gray, #A0A0A4);
+    }
+
+    .newButton {
+        display: flex;
+        width: 280px;
+        height: 50px;
+        padding: 0px 0px 5px 0px;
+        flex-direction: column;
+        align-self: stretch;
+        border-radius: 12px;
+        background: var(--system-magenta, #CB11AB);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: -68px;
+        left: 290px;
+    }
+
+    .hrefSylka {
+        display: flex;
+        font-family: "SegoeUISemiBold", sans-serif;
+        font-size: 24px;
+        line-height: 24px;
+        color: #FFF
+    }
+    /* Конец блока */
     /* ------- Конец задавание ширины ------- */
 
     /* Модальные окна */
@@ -152,7 +219,7 @@ legend {
         position: absolute; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
@@ -631,7 +698,7 @@ legend {
     }
 
     .Header {
-        width: 1400px;
+        width: 100%;
         height: 123px;
         display: flex;
         flex-direction: column;
@@ -902,7 +969,7 @@ legend {
     .Rounding1 {
         position: relative;
         bottom: 0px;
-        width: 1400px;
+        width: 100%;
         height: 27px;
         align-self: stretch;
         border-radius: 24px 24px 0px 0px;
@@ -912,7 +979,7 @@ legend {
     .Rounding2 {
         position: relative;
         bottom: 10px;
-        width: 1400px;
+        width: 100%;
         height: 24px;
         padding: 23px 0px 0px 0px;
         align-self: stretch;
@@ -933,7 +1000,7 @@ legend {
         align-items: flex-start;
         gap: 32px;
         align-self: stretch;
-        width: 1400px;
+        width: 100%;
         background-color: rgb(246, 246, 250);
         position: relative;
         bottom: 9px;
@@ -1103,6 +1170,31 @@ legend {
         align-items: flex-start;
         align-self: stretch;
     }
+
+    .InsideContentBlocksFirst:hover .BlockInconsLikeDelete{
+        visibility: visible;
+    }
+    
+    .InsideContentBlocksSecond:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .InsideContentBlocksThird:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockFirst:hover .AbsentInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockSecond:hover .AbsentSecondInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockThird:hover .InsideAbsentIconsBlockThird {
+        visibility: visible;
+    }
+
 
     .ContainerFirstContentBlock {
         display: flex;
@@ -1591,7 +1683,8 @@ legend {
     }
 
     .BlockSumContent {
-        display: flex;    margin: -4px 12px 0px 8px;
+        display: flex;    
+        margin: -4px 12px 0px 8px;
         width: 100px;
         height: 44px;
         border-radius: 8px;
@@ -1691,6 +1784,7 @@ legend {
         align-items: center;
         gap: 16px;
         margin: 0px 11px 0px 0px;
+        visibility: hidden;
     }
 
     .ButtonLikeIcon {
@@ -1774,7 +1868,7 @@ legend {
         align-items: flex-start;
         gap: 1px;
         position: relative;
-        margin: 0px -3px 0px 0px;
+        margin: -4px -2px 0px 0px;
     }
 
     .SpanResultNonSkidka {
@@ -1794,7 +1888,7 @@ legend {
     .LineStrikeResult {
         width: 55px;
         position: absolute;
-        bottom: 10px;
+        bottom: 9px;
         stroke-width: 1px;
         stroke: var(--system-gray, #A0A0A4);
     }
@@ -2019,6 +2113,7 @@ legend {
         align-items: flex-start;
         gap: 16px;
         align-self: stretch;
+        visibility: hidden;
     }
 
     .AbsentInfoIconsBlock {
@@ -2332,26 +2427,29 @@ legend {
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 18.6px;
+        /* right: 18.6px; */
         top: -9.9px;
         border-radius: 16px;
         background: var(--system-red, #F55123);
     }
 
     #LableFirstImageDelivery {
-        right: 93.6px;
-        top: -10.4px; 
-        /* display: none; */
+        left: 28px;
+        top: -10.4px;
+        visibility: hidden;
+        z-index: 1;
     }
 
     #LabelSecondImageDelivery {
-        right: 47px;
         top: -9.6px;
+        left: 68px;
+        z-index: 1;
     }
 
     #LabelThirdImageDelivery {
-        right: -2.4px;
+        right: -2px;
         top: -9.9px;
+        z-index: 1;
     }
 
     .FirstSpanLableDelivery {
@@ -3210,7 +3308,7 @@ legend {
         padding: 8px 0px 0px 0px;
         display: flex;
         height: 24px;
-        width: 1400px;
+        width: 100%;
         background-color: rgb(246, 246, 250);
     }
 
@@ -3219,7 +3317,7 @@ legend {
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;
-        width: 1400px;
+        width: 100%;
         height: 88px;
         position: relative;
         background: var(--system-violet, #6725A8);
@@ -3278,12 +3376,81 @@ legend {
 
     body {
         display: flex;
-        width: calc(1024px + (1400 - 1024) * ((100vw - 1024px) / (1400 - 1024)));;
+        width: calc(1024px + (1400 - 1024) * ((100vw - 1024px) / (1400 - 1024)));
         flex-direction: column;
         align-items: flex-start;
         font-family: "SegoeUISemiBold", sans-serif;
         position: relative;
     }
+
+        /* Добавляется блок если ничего нет начало */
+        .blockNonHaveItems {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 1000px;
+            height: 500px;
+            gap: 20px;
+            padding: 16px;
+            margin: 0px 16px;
+            border-radius: 16px;
+            background: var(--background-white, #FFF);
+            box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 30%), 0px 2px 10px 0px rgb(0 0 0 / 15%);
+            justify-content: space-evenly;
+            align-items: center;
+            top: -40px;
+        }
+        
+        .blockBodyNewBlock {
+            display: flex;
+            width: 900px;
+            height: 120px;
+            gap: 24px;
+            padding: 16px;
+            margin: 0px 16px;
+            flex-direction: column;
+            align-content: flex-start;
+        }
+    
+        .newSpanNewBlocks {
+            display: flex;
+            font-family: "SegoeUIBold", sans-serif;
+            font-size: 28px;
+            line-height: 24px;
+        }
+    
+        .SpanBodyNewBlock {
+            display: flex;
+            font-family: "SegoeUISemiBold", sans-serif;
+            font-size: 24px;
+            line-height: 24px;
+            color: var(--light-system-gray, #A0A0A4);
+        }
+    
+        .newButton {
+            display: flex;
+            width: 280px;
+            height: 50px;
+            padding: 0px 0px 5px 0px;
+            flex-direction: column;
+            align-self: stretch;
+            border-radius: 12px;
+            background: var(--system-magenta, #CB11AB);
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: -68px;
+            left: 290px;
+        }
+    
+        .hrefSylka {
+            display: flex;
+            font-family: "SegoeUISemiBold", sans-serif;
+            font-size: 24px;
+            line-height: 24px;
+            color: #FFF
+        }
+        /* Конец блока */
 
     /* ------- Конец задавание ширины ------- */
 
@@ -3294,7 +3461,7 @@ legend {
         position: absolute; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
@@ -4247,6 +4414,30 @@ legend {
         align-self: stretch;
     }
 
+    .InsideContentBlocksFirst:hover .BlockInconsLikeDelete{
+        visibility: visible;
+    }
+    
+    .InsideContentBlocksSecond:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .InsideContentBlocksThird:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockFirst:hover .AbsentInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockSecond:hover .AbsentSecondInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockThird:hover .InsideAbsentIconsBlockThird {
+        visibility: visible;
+    }
+
     .ContainerFirstContentBlock {
         display: flex;
         width: 397px;
@@ -4815,6 +5006,7 @@ legend {
         justify-content: center;
         align-items: center;
         gap: 16px;
+        visibility: hidden;
     }
 
     .ButtonLikeIcon {
@@ -5163,6 +5355,7 @@ legend {
         align-items: flex-start;
         gap: 16px;
         align-self: stretch;
+        visibility: hidden;
     }
 
     .AbsentInfoIconsBlock {
@@ -5480,26 +5673,28 @@ legend {
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 18.6px;
         top: -9.9px;
         border-radius: 16px;
         background: var(--system-red, #F55123);
     }
 
     #LableFirstImageDelivery {
-        right: 91.6px;
-        top: -10.4px; 
-        display: none;
+        left: 28px;
+        top: -10.4px;
+        visibility: hidden;
+        z-index: 1;
     }
 
     #LabelSecondImageDelivery {
-        right: 32px;
         top: -9.6px;
+        right: 32px;
+        z-index: 1;
     }
 
     #LabelThirdImageDelivery {
-        right: -5.4px;
+        right: -5px;
         top: -9.9px;
+        z-index: 1;
     }
 
     .FirstSpanLableDelivery {
@@ -6453,6 +6648,77 @@ legend {
         font-family: "SegoeUISemiBold", sans-serif;
     }
 
+        /* Добавляется блок если ничего нет начало */
+        .blockNonHaveItems {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 300px;
+            height: 240px;
+            gap: 8px;
+            padding: 16px;
+            margin: 0px 16px;
+            border-radius: 16px;
+            background: var(--background-white, #FFF);
+            box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 30%), 0px 2px 10px 0px rgb(0 0 0 / 15%);
+            justify-content: space-evenly;
+            align-items: center;
+            top: -40px;
+        }
+        
+        .blockBodyNewBlock {
+            display: flex;
+            width: 300px;
+            height: 200px;
+            gap: 14px;
+            padding: 16px;
+            margin: 0px 16px;
+            flex-direction: column;
+            align-content: flex-start;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .newSpanNewBlocks {
+            display: flex;
+            font-family: "SegoeUIBold", sans-serif;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    
+        .SpanBodyNewBlock {
+            display: flex;
+            font-family: "SegoeUISemiBold", sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            color: var(--light-system-gray, #A0A0A4);
+        }
+    
+        .newButton {
+            display: flex;
+            width: 160px;
+            height: 50px;
+            padding: 0px 0px 5px 0px;
+            flex-direction: column;
+            align-self: stretch;
+            border-radius: 12px;
+            background: var(--system-magenta, #CB11AB);
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: -23px;
+            left: 54px;
+        }
+    
+        .hrefSylka {
+            display: flex;
+            font-family: "SegoeUISemiBold", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFF
+        }
+        /* Конец блока */
+
     /* ------- Конец задавание ширины ------- */
 
     /* Модальные окна */
@@ -6462,7 +6728,7 @@ legend {
         position: absolute; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
@@ -7274,6 +7540,30 @@ legend {
         align-self: stretch;
     }
 
+    .InsideContentBlocksFirst:hover .BlockInconsLikeDelete{
+        visibility: visible;
+    }
+    
+    .InsideContentBlocksSecond:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .InsideContentBlocksThird:hover .BlockInconsLikeDelete {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockFirst:hover .AbsentInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockSecond:hover .AbsentSecondInfoIconsBlock {
+        visibility: visible;
+    }
+
+    .AbsentInfoCommonBlockThird:hover .InsideAbsentIconsBlockThird {
+        visibility: visible;
+    }
+
     .ContainerFirstContentBlock {
         display: flex;
         width: calc(288px + (640 - 288) * ((100vw - 320px) / (1023 - 320)));
@@ -7640,12 +7930,13 @@ legend {
 
     .BlockSumContent {
         display: flex;
-        width: 80px;
         height: 32px;
         justify-content: center;
         align-items: center;
         margin: -2px 0px 0px 0px;
         position: relative;
+        border-radius: 8px;
+        background: var(--background-white, #FFF);
     }
 
     .BlockNumberResult {
@@ -7659,6 +7950,7 @@ legend {
 
     .SpanNumberKolVo {
         display: flex;
+        width: 30px;
         padding: 4.333px 0px 7.667px 0px;
         justify-content: center;
         align-items: center;
@@ -7667,7 +7959,7 @@ legend {
         text-align: center;
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 14px;
-        line-height: 20px; /* 142.857% */
+        line-height: 20px;
     }
 
     .SpanNumberKolVo:disabled {
@@ -7710,9 +8002,9 @@ legend {
 
     .ButtonMinusBlock {
         display: flex;
-        padding: 2.667px 5px 8px 10px;
+        padding: 0px 5px 8px 8px;
         flex-direction: column;
-        align-items: center;
+        align-items: center;f
     }
 
     .ButtonMinus {
@@ -7736,6 +8028,7 @@ legend {
         align-items: center;
         gap: 24px;
         margin: -4px 12px 0px 8px;
+        visibility: hidden;
     }
 
     .BlockInconsLikeDeleteMobile {
@@ -7798,6 +8091,7 @@ legend {
     .BlockResultSum {
         display: flex;
         align-items: baseline;
+        flex-direction: row;
     }
 
     .SpanResultSum {
@@ -7861,20 +8155,21 @@ legend {
     .LineStrikeResult2 {
         width: 86px;
         position: absolute;
-        bottom: 10px;
+        bottom: 8px;
         stroke-width: 1px;
         stroke: var(--system-gray, #A0A0A4);
     }
 
     .LineDownResult {
         width: 57px;
+        position: relative;
+        bottom: 1px;
     }
 
     .LineDownResult2 {
         width: 84px;
         margin: -1px 0px 0px 0px;
-        position: relative;
-        bottom: 3px;
+        position: relative;5px
         right: 3px;
     }
 
@@ -7888,18 +8183,23 @@ legend {
     }
 
     .SpanKeepContentSecond {
-        margin: 0px 0px 2px 2px;
+        margin: 0px 0px 2px 5px;
     }
 
     .SpanResultSum2 {
+        width: 74px;
         padding: 1px 0px 0px 0px;
         color: var(--text-black, #000);
         text-align: right;
-        font-family: "SegoeUISemiBold", sans-serif;
+        font-family: "SegoeUIBold", sans-serif;
         font-size: 16px;
         line-height: 28px;
-        margin: 0px 1px 0px 0px;
-        letter-spacing: -0.2px;
+        margin: -1px -1px 0px -4px;
+        letter-spacing: -0.14px;
+    }
+
+    .normalyBlock {
+        margin: 0px 0px 0px -2px;
     }
 
     .TitleContainerInfoZakaz2 {
@@ -7950,6 +8250,18 @@ legend {
         line-height: 14px; /* 123.077% */
     }
 
+    #SpanNumberKolVo2 {
+        margin: 0px 0px 0px 3px
+    }
+
+    #FooterUpContainer3 {
+        margin: -2px 0px 0px 0px;
+    }
+
+    .SpanNumberKolVo1 {
+        margin: 0px 0px 0px 3px;
+    }
+
     .SpanNumberKolVo3 {
         display: flex;
         width: 32px;
@@ -7962,7 +8274,7 @@ legend {
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 16px;
         line-height: 24px;
-        margin: -2px -1px 0px -1px;
+        margin: 0px 0px 0px 0px;
     }
 
 
@@ -8113,6 +8425,7 @@ legend {
         align-items: flex-start;
         gap: 16px;
         align-self: stretch;
+        visibility: hidden;
     }
 
     .InsideAbsentInfoIconBlockMobile {
@@ -8305,7 +8618,7 @@ legend {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        margin: 9px 0px 0px 0px;
+        margin: -8px 0px 0px 0px;
     }
     
 
@@ -8427,6 +8740,7 @@ legend {
     }
 
     .ImageDevileryCoomon {
+        z-index: 0;
         margin: -1px 1px 0px 0px;
         position: relative;
         width: 40.925px;
@@ -8440,7 +8754,7 @@ legend {
     }
 
     .SecondImageDelivery {
-        margin: -2px 0px 0px -34px;
+        /* margin: -2px 0px 0px -34px; */
     }
 
     .LabelFirstDelivery {
@@ -8462,16 +8776,21 @@ legend {
         right: 93.6px;
         top: -10.4px; 
         display: none;
+        z-index: 1;
     }
 
     #LabelSecondImageDelivery {
-        right: 47px;
-        top: -9.6px;
+        top: -64px;
+        left: 18px;
+        z-index: 1;
+        width: 28px;
     }
 
     #LabelThirdImageDelivery {
-        right: -2.4px;
-        top: -9.9px;
+        left: 26px;
+        top: -64px;
+        width: 18px;
+        z-index: 1;
     }
 
     .FirstSpanLableDelivery {
