@@ -1794,8 +1794,13 @@ legend {
 
     .ImgLikeIcon {
         height: 20px;
-        background-image: url(/public/icons/icon-Like.svg);
+        /* background-image: url(/public/icons/icon-Like.svg); */
     }
+
+    .ImgLikeIcon:hover path {
+        fill: #CB11AB;
+    }
+
 
     .ImgLikeIcon:hover {
         background-image: url(/public/icons/iconLikePink.svg);
@@ -1808,22 +1813,21 @@ legend {
     }
 
     .ImgDeleteIcon {
+        width: 20px;
         height: 20px;
-        background-image: url(/public/icons/icon-Delete.svg);
     }
 
-    .ImgDeleteIcon:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
+    .ImgDeleteIcon:hover path {
+        fill: #F55123;
     }
 
     .ImgDeleteIconGray {
         width: 20px;
         height: 20px;
-        background-image: url(/public/icons/iconDeleteGray.svg);
     }
 
-    .ImgDeleteIconGray:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
+    .ImgDeleteIconGray:hover path{
+        fill: #F55123;
     }
 
     .BlockResultInfoContent {
@@ -5019,8 +5023,13 @@ legend {
         background-image: url(/public/icons/icon-Like.svg);
     }
 
-    .ImgLikeIcon:hover {
-        background-image: url(/public/icons/iconLikePink.svg);
+    .ImgLikeIcon:hover path {
+        fill: #CB11AB;
+    }
+
+    .ButtonDeleteIcon {
+        width: 20px;
+        height: 20px;
     }
 
     .ButtonDeleteIcon {
@@ -5029,8 +5038,12 @@ legend {
     }
 
     .ImgDeleteIcon {
+        width: 20px;
         height: 20px;
-        background-image: url(/public/icons/icon-Delete.svg);
+    }
+
+    .ImgDeleteIcon:hover path {
+        fill: #F55123;
     }
 
     .ImgDeleteIconGray {
@@ -5039,12 +5052,8 @@ legend {
         background-image: url(/public/icons/iconDeleteGray.svg);
     }
 
-    .ImgDeleteIconGray:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
-    }
-
-    .ImgDeleteIcon:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
+    .ImgDeleteIconGray:hover path{
+        fill: #F55123;
     }
 
     .BlockResultInfoContent {
@@ -8049,8 +8058,13 @@ legend {
         background-image: url(/public/icons/icon-Like.svg);
     }
 
-    .ImgLikeIcon:hover {
-        background-image: url(/public/icons/iconLikePink.svg);
+    .ImgLikeIcon:hover path {
+        fill: #CB11AB;
+    }
+
+    .ButtonDeleteIcon {
+        width: 20px;
+        height: 20px;
     }
 
     .ButtonDeleteIcon {
@@ -8059,22 +8073,21 @@ legend {
     }
 
     .ImgDeleteIcon {
+        width: 20px;
         height: 20px;
-        background-image: url(/public/icons/icon-Delete.svg);
     }
 
-    .ImgDeleteIcon:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
+    .ImgDeleteIcon:hover path {
+        fill: #F55123;
     }
 
     .ImgDeleteIconGray {
         width: 20px;
         height: 20px;
-        background-image: url(/public/icons/iconDeleteGray.svg);
     }
 
-    .ImgDeleteIconGray:hover {
-        background-image: url(/public/icons/iconDeleteOrange.svg);
+    .ImgDeleteIconGray:hover path{
+        fill: #F55123;
     }
 
     .BlockResultInfoContent {

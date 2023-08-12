@@ -12,9 +12,6 @@ const CheckboxTotal = document.querySelector('#CheckboxTotal');
 // Кнопки на удаление
 const allButtonDelete = document.querySelectorAll('.ButtonDeleteIcon');
 
-const mainBlock = document.querySelector('.ContentFirstBlock');
-const allCheckbox = mainBlock.querySelectorAll('input[type=checkbox]');
-
 // Модальные окна
 const modalOplata = document.querySelector('#modalOplataMethods');
 const modalDelivery = document.querySelector('#modalDelivery');
@@ -39,7 +36,6 @@ const buttonDeleteModal = document.querySelectorAll('.ImgDeleteIconGray');
 
 // Итого данные блоки
 const resultTotal = document.querySelector('.H2TotalResult');
-const labelMenuBasket = document.querySelector('.LabelIconBasket');
 const QuantityProduct = document.querySelector('.QuantityProduct');
 const SumProduct = document.querySelector('.SumProduct');
 const SumDiscount = document.querySelector('.SumDiscount');
@@ -48,12 +44,10 @@ const changeButtonZakaz = document.querySelector('.TextButtonZakaz2');
 const spanOplatyInfo = document.querySelector('.SpanCheckboxTotalInfo');
 
 // Первый блок секции для скрытия
-const sectionBlock = document.querySelector('.SectionContentLeftBlock');
 const firstContentTransformBlock = document.querySelector('.ContentFirstBlock');
 const secondContentTransformBlock = document.querySelector('.InsideSecondBlockSecondContentBlock');
 const labelCheckboxAll = document.querySelector('.LabelCheckBoxAll');
 const spanTextFirstBlock = document.querySelector('.spanTransorfm');
-const spanTextSecondBlock = document.querySelector('.SpanNonHaveTovar');
 const spanNeedChange = document.querySelector('.InsideFirstBlockSecondContentBlock');
 const blockChange = document.querySelector('.ThirdContentBlock');
 const lineDown = document.querySelector('.LineUpTitle');
@@ -72,7 +66,6 @@ const thirdLable = document.querySelectorAll('#LabelThirdImageDelivery');
 const lableDown = document.querySelectorAll('.LastLabelImageDelivery');
 const blockNoneChange = document.querySelectorAll('.blockNoneChange');
 const spanButtonZakaz = document.querySelector('.TextButtonZakaz2');
-const spanNonDisplay = document.querySelectorAll('.SpanResultNonSkidka2NonDisplay');
 // const blocksDisabledCommon = document.querySelectorAll('.BlockSumContent');
 
 // Количество штук
@@ -157,24 +150,6 @@ localStorage.setItem('allQuantity', allQuantity);
 let resultSumDiscount = (sumNonDiscount - sumResultTotal);
 resultSumDiscount = `−${Number(resultSumDiscount)}`;
 localStorage.setItem('resultSumDiscount', resultSumDiscount);
-// // Цена за штуку со скидкой
-// const costOnePieceFirst = Math.trunc(firstSum / firstQuantitySum);
-// const costOnePieceSecond = Math.trunc(secondSum / secondQuantitySum);
-// const costOnePieceThird = Math.trunc(thirdSum / thirdQuantitySum);
-// localStorage.setItem('costOnePieceFirst', costOnePieceFirst);
-// localStorage.setItem('costOnePieceSecond', costOnePieceSecond);
-// localStorage.setItem('costOnePieceThird', costOnePieceThird);
-// // Цена за одну штуку без скидки
-// const costOnePieceNonSkidkaFirst = Math.trunc(FirstPriceNonDiscount / firstQuantitySum);
-// const costOnePieceNonSkidkaSecond = Math.trunc(SecondPriceNonDiscount / secondQuantitySum);
-// const costOnePieceNonSkidkaThird = Math.trunc(ThirdPriceNonDiscount / thirdQuantitySum);
-// localStorage.setItem('costOnePieceNonSkidkaFirst', costOnePieceNonSkidkaFirst);
-// localStorage.setItem('costOnePieceNonSkidkaSecond', costOnePieceNonSkidkaSecond);
-// localStorage.setItem('costOnePieceNonSkidkaThird', costOnePieceNonSkidkaThird);
-
-console.log(localStorage);
-
-//
 
 // Валидация форма
 firstNameInput.addEventListener('change', async (e) => {
@@ -215,7 +190,6 @@ emainInput.addEventListener('change', async (e) => {
 
 phoneInput.addEventListener('change', async (e) => {
   phoneInput.value = phoneInput.value.replace(/^[+]?(\d)(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
-  console.log(phoneInput.value);
   e.preventDefault();
   const test = phoneInput.value.length === 0 || PhoneRegExp.test(phoneInput.value);
   if (test) {
@@ -1479,7 +1453,6 @@ for (let i = 0; i < allInputs.length; i++) {
 for (let i = 0; i < CheckBoxes.length; i++) {
   CheckBoxes[i].addEventListener('click', async (e) => {
     const checkedCount = document.querySelectorAll('input.InputCheckBoxFunc:checked').length;
-    console.log(checkedCount);
     mainCheckbox.checked = checkedCount === CheckBoxes.length;
     if (checkedCount === 0) {
       const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
@@ -1533,7 +1506,6 @@ for (let i = 0; i < CheckBoxes.length; i++) {
       } else {
         const imgFirst = document.querySelectorAll('#FirstImageDelivery');
         const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
-        const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
         for (let z = 0; z < imgFirst.length; z++) {
           imgFirst[z].style.display = 'none';
           if (secondCheckBox.checked) {
@@ -1541,7 +1513,6 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           } else {
             blockNoneChange[z].style.display = 'none';
           }
-          LableSecondImageDelivery[z].style.left = '18px';
           LableFirstImageDelivery[z].style.visibility = 'hidden';
         }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
@@ -1692,10 +1663,46 @@ for (let i = 0; i < CheckBoxes.length; i++) {
 mainCheckbox.addEventListener('click', async (e) => {
   if (mainCheckbox.checked) {
     for (let i = 0; i < CheckBoxes.length; i++) {
+      const firstBlock = document.querySelector('.InsideContentBlocksFirst');
+      const secondBlock = document.querySelector('.InsideContentBlocksSecond');
+      const thirdBlock = document.querySelector('.InsideContentBlocksThird');
+      const FirstImageDelivery = document.querySelectorAll('#FirstImageDelivery');
+      const SecondImageDelivery = document.querySelectorAll('#SecondImageDelivery');
+      const ThirdImageDelivery = document.querySelectorAll('#ThirdImageDelivery');
+      const LabelSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+      if (!CheckBoxes[i].checked && firstBlock.style.display != 'none') {
+        for (let k = 0; k < FirstImageDelivery.length; k++) {
+          FirstImageDelivery[k].style.display = 'flex';
+        }
+      }
+      if (!CheckBoxes[i].checked && secondBlock.style.display != 'none') {
+        for (let k = 0; k < SecondImageDelivery.length; k++) {
+          SecondImageDelivery[k].style.display = 'flex';
+          LabelSecondImageDelivery[k].style.visibility = 'visible';
+          LabelSecondImageDelivery[k].style.display = 'flex'
+        }
+      }
+      if (!CheckBoxes[i].checked && thirdBlock.style.display != 'none') {
+        for (let k = 0; k < ThirdImageDelivery.length; k++) {
+          ThirdImageDelivery[k].style.display = 'flex';
+        }
+      }
       CheckBoxes[i].checked = !this.checked;
       const firstKolvo = Number(document.querySelector('.SpanNumberKolVo1').value);
       const secondKolvo = Number(document.querySelector('.SpanNumberKolVo2').value);
       const thirdKolvo = Number(document.querySelector('.SpanNumberKolVo3').value);
+      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
+      for (let x = 0; x < blockNone.length; x++) {
+        blockNone[x].style.display = 'flex';
+      }
+      if (secondKolvo < 184) {
+        const BlockDeliveryImageMobile1 = document.querySelectorAll('#BlockDeliveryImageMobile1');
+        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('.BlockSecondDeliveryTime');
+        BlockDisplayNoneChangeCheckbox1.style.display = 'none';
+        for (let q = 0; q < BlockDeliveryImageMobile1.length; q++) {
+          BlockDeliveryImageMobile1[q].style.display = 'none';
+        }
+      }
 
       const onePieceFirst1 = Number(document.querySelector('#SpanResultSumNoMobile1').innerHTML?.split(' ')?.join(''));
       const onePieceSecond2 = Number(document.querySelector('#SpanResultSumNoMobile2').innerHTML?.split(' ')?.join(''));
@@ -1704,7 +1711,6 @@ mainCheckbox.addEventListener('click', async (e) => {
       const FirstPriceWithoutDiscount1 = Number(document.querySelector('.SpanResultNonSkidka1').innerHTML?.split(' ')?.join(''));
       const SecondPriceWithoutDiscount2 = Number(document.querySelector('.SpanResultNonSkidkaResultSecond').innerHTML?.split(' ')?.join(''));
       const ThirdPriceWithoutDiscount3 = Number(document.querySelector('.SpanResultNonSkidka3').innerHTML?.split(' ')?.join(''));
-
       localStorage.firstQuantitySum = firstKolvo;
       localStorage.firstSum = onePieceFirst1;
       localStorage.FirstPriceNonDiscount = FirstPriceWithoutDiscount1;
@@ -1723,10 +1729,6 @@ mainCheckbox.addEventListener('click', async (e) => {
       SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      const blockNone = document.querySelectorAll('.BlockDisplayNoneChangeCheckbox');
-      for (let x = 0; x < blockNone.length; x++) {
-        blockNone[x].style.display = 'flex';
-      }
       if (Number(localStorage.firstQuantitySum) === 1) {
         allMinus[0].setAttribute('disabled', 'true');
         allPlus[0].removeAttribute('disabled');
@@ -1812,6 +1814,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       const thirdKolvo = document.querySelector('.SpanNumberKolVo3');
       const onePieceFirst1 = document.querySelector('#SpanResultSumNoMobile1');
       const FirstPriceWithoutDiscount1 = document.querySelector('.SpanResultNonSkidka1');
+      const onePieceFirst13 = document.querySelector('#SpanResultSumNoMobile1');
 
       const imgFirst = document.querySelectorAll('#FirstImageDelivery');
       const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
@@ -1846,6 +1849,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         imgFirst[z].style.display = 'none';
         LableFirstImageDelivery[z].style.display = 'none';
       }
+      firstKolvo.value = 0;
+      onePieceFirst1.innerHTML = 0;
+      FirstPriceWithoutDiscount1.innerHTML = 0;
+      onePieceFirst13.innerHTML = 0;
+      localStorage.firstQuantitySum = 0;
+      localStorage.FirstPriceNonDiscount = 0;
+      localStorage.firstSum = 0;
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceFirst.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(FirstPriceWithoutDiscount1.innerHTML?.split(' ')?.join(''));
@@ -1865,12 +1875,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      firstKolvo.value = 0;
-      onePieceFirst1.innerHTML = 0;
-      FirstPriceWithoutDiscount1.innerHTML = 0;
-      localStorage.firstQuantitySum = 0;
-      localStorage.FirstPriceNonDiscount = 0;
-      localStorage.firstSum = 0;
+      firstCheckBox.removeAttribute('cheked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo) === 0 && Number(firstKolvo.value) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
@@ -1882,7 +1887,6 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         Section.style.justifyContent = 'center';
         Section.style.alignItems = 'center';
         Section.innerHTML = divInfo;
-        console.log('firstheelo');
       }
     }
     if (id === '2') {
@@ -1893,6 +1897,8 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       const thirdKolvo = document.querySelector('.SpanNumberKolVo3');
       const onePieceSecond1 = document.querySelector('#SpanResultSumNoMobile2');
       const SecondPriceWithoutDiscount1 = document.querySelector('.SpanResultNonSkidka2');
+      const onePieceSecond2 = document.querySelector('#SpanResultSumNoMobile2');
+      const SecondPriceWithoutDiscount2 = document.querySelector('.SpanResultNonSkidkaResultSecond');
 
       const imgSecond = document.querySelectorAll('#SecondImageDelivery');
       const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
@@ -1929,6 +1935,15 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       secondBlock.style.display = 'none';
       secondBlockDown.style.display = 'none';
 
+      secondKolvo.value = 0;
+      onePieceSecond1.innerHTML = 0;
+      SecondPriceWithoutDiscount1.innerHTML = 0;
+      onePieceSecond2.innerHTML = 0;
+      SecondPriceWithoutDiscount2.innerHTML = 0;
+      localStorage.secondQuantitySum = 0;
+      localStorage.SecondPriceNonDiscount = 0;
+      localStorage.secondSum = 0;
+
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceSecond1.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(SecondPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
@@ -1949,12 +1964,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      secondKolvo.value = 0;
-      onePieceSecond1.innerHTML = 0;
-      SecondPriceWithoutDiscount1.innerHTML = 0;
-      localStorage.secondQuantitySum = 0;
-      localStorage.SecondPriceNonDiscount = 0;
-      localStorage.secondSum = 0;
+      CheckBoxes[i].removeAttribute('checked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
@@ -1969,6 +1979,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       }
     }
     if (id === '3') {
+      const onePieceThird3 = document.querySelector('#SpanResultSumNoMobile3');
       const thirdBlock = document.querySelector('.InsideContentBlocksThird');
       const thirdBlockDown = document.querySelector('.AbsentInfoCommonBlockThird');
       const firstKolvo = document.querySelector('.SpanNumberKolVo1');
@@ -2002,6 +2013,14 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       thirdBlock.style.display = 'none';
       thirdBlockDown.style.display = 'none';
 
+      thirdKolvo.value = 0;
+      onePieceThird1.innerHTML = 0;
+      ThirdPriceWithoutDiscount1.innerHTML = 0;
+      onePieceThird3.innerHTML = 0;
+      localStorage.thirdQuantitySum = 0;
+      localStorage.ThirdPriceNonDiscount = 0;
+      localStorage.thirdSum = 0;
+
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceThird1.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(ThirdPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
@@ -2022,12 +2041,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      thirdKolvo.value = 0;
-      onePieceThird1.innerHTML = 0;
-      ThirdPriceWithoutDiscount1.innerHTML = 0;
-      localStorage.thirdQuantitySum = 0;
-      localStorage.ThirdPriceNonDiscount = 0;
-      localStorage.thirdSum = 0;
+      thirdCheckBox.removeAttribute('cheked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo.value) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
