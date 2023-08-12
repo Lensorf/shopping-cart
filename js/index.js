@@ -1849,13 +1849,6 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         imgFirst[z].style.display = 'none';
         LableFirstImageDelivery[z].style.display = 'none';
       }
-      firstKolvo.value = 0;
-      onePieceFirst1.innerHTML = 0;
-      FirstPriceWithoutDiscount1.innerHTML = 0;
-      onePieceFirst13.innerHTML = 0;
-      localStorage.firstQuantitySum = 0;
-      localStorage.FirstPriceNonDiscount = 0;
-      localStorage.firstSum = 0;
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceFirst.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(FirstPriceWithoutDiscount1.innerHTML?.split(' ')?.join(''));
@@ -1865,6 +1858,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       localStorage.allQuantity = Number(localStorage.allQuantity) - Number(firstKolvo.value);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      firstKolvo.value = 0;
+      onePieceFirst1.innerHTML = 0;
+      FirstPriceWithoutDiscount1.innerHTML = 0;
+      onePieceFirst13.innerHTML = 0;
+      localStorage.firstQuantitySum = 0;
+      localStorage.FirstPriceNonDiscount = 0;
+      localStorage.firstSum = 0;
       if (Number(SpanLabelIconBasket.innerHTML) === 1) {
         const IconeBasket = document.querySelector('#IconeBasket');
         IconeBasket.style.margin = '0px 0px 0px 2px';
@@ -1883,7 +1883,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
         SectionLeftBlock.style.display = 'none';
         SectionRigthBlock.style.display = 'none';
-        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="https://www.wildberries.ru/" class="hrefSylka">Перейти на главную</a></button></div></div>';
         Section.style.justifyContent = 'center';
         Section.style.alignItems = 'center';
         Section.innerHTML = divInfo;
@@ -1935,15 +1935,6 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       secondBlock.style.display = 'none';
       secondBlockDown.style.display = 'none';
 
-      secondKolvo.value = 0;
-      onePieceSecond1.innerHTML = 0;
-      SecondPriceWithoutDiscount1.innerHTML = 0;
-      onePieceSecond2.innerHTML = 0;
-      SecondPriceWithoutDiscount2.innerHTML = 0;
-      localStorage.secondQuantitySum = 0;
-      localStorage.SecondPriceNonDiscount = 0;
-      localStorage.secondSum = 0;
-
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceSecond1.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(SecondPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
@@ -1953,6 +1944,14 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       localStorage.allQuantity = Number(localStorage.allQuantity) - Number(secondKolvo.value);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      secondKolvo.value = 0;
+      onePieceSecond1.innerHTML = 0;
+      SecondPriceWithoutDiscount1.innerHTML = 0;
+      onePieceSecond2.innerHTML = 0;
+      SecondPriceWithoutDiscount2.innerHTML = 0;
+      localStorage.secondQuantitySum = 0;
+      localStorage.SecondPriceNonDiscount = 0;
+      localStorage.secondSum = 0;
 
       if (Number(SpanLabelIconBasket.innerHTML) === 1) {
         const IconeBasket = document.querySelector('#IconeBasket');
@@ -1972,7 +1971,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
         SectionLeftBlock.style.display = 'none';
         SectionRigthBlock.style.display = 'none';
-        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="https://www.wildberries.ru/" class="hrefSylka">Перейти на главную</a></button></div></div>';
         Section.style.justifyContent = 'center';
         Section.style.alignItems = 'center';
         Section.innerHTML = divInfo;
@@ -2013,14 +2012,6 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       thirdBlock.style.display = 'none';
       thirdBlockDown.style.display = 'none';
 
-      thirdKolvo.value = 0;
-      onePieceThird1.innerHTML = 0;
-      ThirdPriceWithoutDiscount1.innerHTML = 0;
-      onePieceThird3.innerHTML = 0;
-      localStorage.thirdQuantitySum = 0;
-      localStorage.ThirdPriceNonDiscount = 0;
-      localStorage.thirdSum = 0;
-
       localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceThird1.innerHTML?.split(' ')?.join(''));
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
       localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(ThirdPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
@@ -2030,6 +2021,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       localStorage.allQuantity = Number(localStorage.allQuantity) - Number(thirdKolvo.value);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
+      thirdKolvo.value = 0;
+      onePieceThird1.innerHTML = 0;
+      ThirdPriceWithoutDiscount1.innerHTML = 0;
+      onePieceThird3.innerHTML = 0;
+      localStorage.thirdQuantitySum = 0;
+      localStorage.ThirdPriceNonDiscount = 0;
+      localStorage.thirdSum = 0;
 
       if (Number(SpanLabelIconBasket.innerHTML) === 1) {
         const IconeBasket = document.querySelector('#IconeBasket');
@@ -2049,7 +2047,7 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         const SectionRigthBlock = document.querySelector('.SectionRigthBlock');
         SectionLeftBlock.style.display = 'none';
         SectionRigthBlock.style.display = 'none';
-        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="index.html" class="hrefSylka">Перейти на главную</a></button></div></div>';
+        const divInfo = '<div class="blockNonHaveItems"><span class="newSpanNewBlocks"> В корзине пока пусто </span><div class="blockBodyNewBlock"><span class="SpanBodyNewBlock"> Загляните на главную, чтобы выбрать товары или найдите нужное в поиске</span> <button class="newButton" type="button"> <a href="https://www.wildberries.ru/" class="hrefSylka">Перейти на главную</a></button></div></div>';
         Section.style.justifyContent = 'center';
         Section.style.alignItems = 'center';
         Section.innerHTML = divInfo;
