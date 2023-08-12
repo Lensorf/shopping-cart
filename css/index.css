@@ -1794,12 +1794,12 @@ legend {
 
     .ImgLikeIcon {
         height: 20px;
-        background-image: url(/public//icons/icon-Like.svg);
+        background-image: url(/public/icons/icon-Like.svg);
     }
 
     .ImgLikeIcon:hover {
         background-image: url(/public/icons/iconLikePink.svg);
-        cursor: url(/public//icons/cursorPointer.svg) auto;
+        cursor: url(/public/icons/cursorPointer.svg) auto;
     }
 
     .ButtonDeleteIcon {
@@ -5016,7 +5016,7 @@ legend {
 
     .ImgLikeIcon {
         height: 20px;
-        background-image: url(/public//icons/icon-Like.svg);
+        background-image: url(/public/icons/icon-Like.svg);
     }
 
     .ImgLikeIcon:hover {
@@ -8046,7 +8046,7 @@ legend {
 
     .ImgLikeIcon {
         height: 20px;
-        background-image: url(/public//icons/icon-Like.svg);
+        background-image: url(/public/icons/icon-Like.svg);
     }
 
     .ImgLikeIcon:hover {
