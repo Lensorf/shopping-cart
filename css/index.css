@@ -996,7 +996,7 @@ legend {
 
     .Section {
         display: flex;
-        padding: 6px 24px 17px 24px;
+        padding: 6px 24px 21px 24px;
         align-items: flex-start;
         gap: 32px;
         align-self: stretch;
@@ -1890,11 +1890,15 @@ legend {
     }
 
     .LineStrikeResult {
-        width: 55px;
+        width: 58px;
         position: absolute;
-        bottom: 9px;
+        bottom: 7px;
         stroke-width: 1px;
         stroke: var(--system-gray, #A0A0A4);
+    }
+
+    .LineStrikeResult3 {
+        bottom: 8px;
     }
 
     .LineDownResult {
@@ -1939,6 +1943,11 @@ legend {
         display: none;
     }
 
+    .normalyBlock {
+        display: flex;
+        margin: 3px 0px 0px 3px;
+    }
+
     .SpanResultNonSkidka2 {
         margin: 0px 0px 0px 1px;
         color: var(--system-gray, #A0A0A4);
@@ -1949,6 +1958,7 @@ legend {
     }
 
     .SpanResultNonSkidka2NonDisplay {
+        margin: 0px 0px 0px 3px;
         color: var(--system-gray, #A0A0A4);
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 13px;
@@ -1963,6 +1973,14 @@ legend {
         gap: 1px;
         position: relative;
         margin: 0px -9px 0px 0px;
+    }
+
+    .BlockSpanSkidka3 {
+        display: flex;
+    }
+
+    .spanSomResultNonSkidka {
+        margin: 0px 0px 0px 4px;
     }
 
     .FooterUpSpan3 {
@@ -2824,6 +2842,7 @@ legend {
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 16px;
         line-height: 24px; /* 150% */
+        margin: 1px 0px 0px 0px;
     }
 
     .InputsRecipient::-webkit-input-placeholder{
@@ -3064,6 +3083,11 @@ legend {
         margin: 1px 0px 0px 0px;
     }
 
+    .PriceGalkaSber {
+        display: flex;
+        margin: 0px 0px 0px 0px;
+    }
+
     .IconPriceShipping {
         width: 22px;
         height: 22px;
@@ -3076,7 +3100,7 @@ legend {
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 13px;
         line-height: 16px; /* 123.077% */
-        margin: -12px 0px 0px 0px
+        margin: -2px 0px 0px 8px;
     }
 
     .BlockSpanBesplatnoTotal {
@@ -4294,7 +4318,7 @@ legend {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
-        margin: -4px 0px 0px 0px;
+        margin: -3px 0px 0px 0px;
     }
 
     .CheckBoxALlBlock {
@@ -5985,6 +6009,7 @@ legend {
         align-self: stretch;
         border-radius: 16px;
         background: var(--background-white, #FFF);
+        margin: 1px 0px 0px 0px;
     }
 
     .BlockTitleRecipient {
@@ -6337,10 +6362,15 @@ legend {
         margin: 0px 0px 0px 0px;
     }
 
+    .PriceGalkaSber {
+        display: flex;
+        margin: 0px 0px 0px 0px;
+    }
+
     .IconPriceShipping {
         width: 22px;
         height: 22px;
-        margin: -2px 0px 0px -1px;
+        margin: 4px 8px 0px -1px;
     }
 
     .SpanObratnoDelivery {
@@ -9477,14 +9507,19 @@ legend {
         position: relative;    
     }
 
+    .PriceGalkaSber {
+        display: flex;
+        margin: -2px 0px 0px 0px;
+    }
+
     .IconPriceShipping {
         width: 22px;
         height: 22px;
-        margin: -2px 0px 0px -1px;
+        margin: 4px 7px 0px 0px;
     }
 
     .SpanObratnoDelivery {
-        width: 235px;
+        width: 258px;
         color: var(--text-black, #000);
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 13px;
@@ -9497,8 +9532,8 @@ legend {
         align-items: flex-start;
         gap: 1px;
         position: relative;
-        right: 156px;
-        bottom: -10px;
+        right: 158px;
+        bottom: -7px;
     }
 
     .SpanBasplatnoTotal {
@@ -9790,7 +9825,7 @@ legend {
         letter-spacing: 0.25px;
         justify-content: center;
         align-items: center;
-        top: -10px;
+        top: -9px;
         position: relative;
     }
     /* ------- Конец футера ------- */
@@ -9810,7 +9845,6 @@ legend {
         box-shadow: 0px -0.5px 0px 0px rgb(0 0 0 / 30%);
         backdrop-filter: blur(2.5px);
         top: -16px;
-        margin: 0px 0px 0px 2px;
     }
 
     .IconMobileStyle {
