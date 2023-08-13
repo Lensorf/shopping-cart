@@ -1455,6 +1455,7 @@ for (let i = 0; i < CheckBoxes.length; i++) {
       if (CheckBoxes[i].checked) {
         mainCheckbox.indeterminate = checkedCount > 0 && checkedCount < CheckBoxes.length;
         const SpanNumberKolVo1 = Number(firstQuantity.value);
+        const SpanNumberKolVo2 = Number(secondQuantity.value);
         const SpanResultSumNoMobile1 = Number(document.querySelector('#SpanResultSumNoMobile1').innerHTML?.split(' ')?.join(''));
         const SpanResultNonSkidka1Mobile = Number(document.querySelector('#SpanResultNonSkidka1Mobile').innerHTML?.split(' ').join(''));
         const imgFirst = document.querySelectorAll('#FirstImageDelivery');
@@ -1464,6 +1465,10 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           blockNoneChange.style.display = 'flex';
         } else {
           blockNoneChange.style.display = 'none';
+        }
+        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+        if (SpanNumberKolVo2 < 1) {
+          BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
         for (let z = 0; z < imgFirst.length; z++) {
           imgFirst[z].style.display = 'flex';
@@ -1498,6 +1503,11 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         for (let z = 0; z < imgFirst.length; z++) {
           imgFirst[z].style.display = 'none';
           LableFirstImageDelivery[z].style.visibility = 'hidden';
+        }
+        const SpanNumberKolVo2 = Number(secondQuantity.value);
+        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+        if (SpanNumberKolVo2 < 1) {
+          BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
         localStorage.sumNonDiscount -= Number(localStorage.FirstPriceNonDiscount);
@@ -1534,6 +1544,8 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           LableSecondImageDelivery[z].style.display = 'flex';
           LableSecondImageDelivery[z].style.visibility = 'visible';
         }
+        const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobile12.style.display = 'flex';
         localStorage.secondQuantitySum = SpanNumberKolVo2;
         localStorage.secondSum = SpanResultSumNoMobile2;
         localStorage.SecondPriceNonDiscount = SecondPriceWithoutDiscount2;
@@ -1560,6 +1572,8 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           LableSecondImageDelivery[z].style.display = 'none';
           LableSecondImageDelivery[z].style.visibility = 'hidden';
         }
+        const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobile12.style.display = 'none';
         localStorage.sumResultTotal -= Number(localStorage.secondSum);
         localStorage.sumNonDiscount -= Number(localStorage.SecondPriceNonDiscount);
         localStorage.allQuantity -= Number(localStorage.secondQuantitySum);
@@ -1583,13 +1597,17 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const SpanNumberKolVo3 = Number(thirdQuantitySum);
         const onePieceThird3 = Number(document.querySelector('#SpanResultSumNoMobile3').innerHTML?.split(' ')?.join(''));
         const ThirdPriceWithoutDiscount3 = Number(document.querySelector('.SpanResultNonSkidka3').innerHTML?.split(' ')?.join(''));
-
         const imgThird = document.querySelectorAll('#ThirdImageDelivery');
         const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
         if (secondCheckBox.checked) {
           blockNoneChange.style.display = 'flex';
         } else {
           blockNoneChange.style.display = 'none';
+        }
+        const SpanNumberKolVo2 = Number(secondQuantity.value);
+        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+        if (SpanNumberKolVo2 < 1) {
+          BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
         for (let z = 0; z < imgThird.length; z++) {
           imgThird[z].style.display = 'flex';
@@ -1619,6 +1637,11 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           blockNoneChange.style.display = 'flex';
         } else {
           blockNoneChange.style.display = 'none';
+        }
+        const SpanNumberKolVo2 = Number(secondQuantity.value);
+        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+        if (SpanNumberKolVo2 < 1) {
+          BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
         for (let z = 0; z < imgThird.length; z++) {
           imgThird[z].style.display = 'none';
@@ -1679,6 +1702,13 @@ mainCheckbox.addEventListener('click', async (e) => {
       for (let x = 0; x < blockNone.length; x++) {
         blockNone[x].style.display = 'flex';
       }
+      const BlockDeliveryImage = document.querySelector('.BlockDeliveryImage');
+      BlockDeliveryImage.style.display = 'flex';
+      const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+      BlockDeliveryImageMobile12.style.display = 'flex';
+      const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+      BlockDisplayNoneChangeCheckbox1.style.display = 'flex';
+
       if (secondKolvo < 184) {
         const BlockDeliveryImageMobile1 = document.querySelectorAll('#BlockDeliveryImageMobile1');
         const BlockDisplayNoneChangeCheckbox1 = document.querySelector('.BlockSecondDeliveryTime');
@@ -1761,6 +1791,12 @@ mainCheckbox.addEventListener('click', async (e) => {
       for (let x = 0; x < blockNone.length; x++) {
         blockNone[x].style.display = 'none';
       }
+      const BlockDeliveryImage = document.querySelector('.BlockDeliveryImage');
+      BlockDeliveryImage.style.display = 'none';
+      const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+      BlockDeliveryImageMobile12.style.display = 'none';
+      const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+      BlockDisplayNoneChangeCheckbox1.style.display = 'none';
       allPlus[i].setAttribute('disabled', 'true');
       allInputs[i].setAttribute('disabled', 'true');
       allMinus[i].setAttribute('disabled', 'true');
@@ -1888,8 +1924,10 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
       const blockNone = document.querySelectorAll('.blockNoneChange');
       const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+      const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
       for (let x = 0; x < blockNone.length; x++) {
         blockNone[x].style.display = 'none';
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
         if (firstKolvo != 0) {
           imgThird[x].style.margin = '-1px 1px 0px -0px';
         } else {
@@ -1902,6 +1940,8 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         imgSecond[k].style.display = 'none';
         LableSecondImageDelivery[k].style.display = 'none';
       }
+
+      secondCheckBox.checked = true;
 
       const SpanLabelIconBasket = document.querySelector('.SpanLabelIconBasket');
       const SpanLabelMobile = document.querySelector('.SpanLabelMobile');
