@@ -406,6 +406,8 @@ for (let i = 0; i < allPlus.length; i++) {
       const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / num);
       num += 1;
       if (num >= 185) {
+        const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'flex';
         const spanDostavka = document.querySelector('.SpanDateDilvery');
         spanDostavka.innerHTML = '5–8 фев';
         if (num === 185) {
@@ -424,6 +426,8 @@ for (let i = 0; i < allPlus.length; i++) {
         blockNoneChange.style.display = 'flex';
       }
       if (num < 185) {
+        const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
         const spanDostavka = document.querySelector('.SpanDateDilvery');
         spanDostavka.innerHTML = '5–6 фев';
         if (num === 1) {
@@ -756,6 +760,8 @@ for (let i = 0; i < allMinus.length; i++) {
       const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / num);
       num -= 1;
       if (num >= 185) {
+        const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'flex';
         const spanDostavka = document.querySelector('.SpanDateDilvery');
         spanDostavka.innerHTML = '5–8 фев';
         if (num === 185) {
@@ -774,6 +780,8 @@ for (let i = 0; i < allMinus.length; i++) {
         blockNoneChange.style.display = 'flex';
       }
       if (num < 185) {
+        const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
         const spanDostavka = document.querySelector('.SpanDateDilvery');
         spanDostavka.innerHTML = '5–6 фев';
         if (num === 1) {
@@ -1094,6 +1102,8 @@ for (let i = 0; i < allInputs.length; i++) {
         const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / Number(localStorage.secondQuantitySum));
         allInputs[i].value = allInputs[i].min;
         if (allInputs[i].value >= 185) {
+          const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+          BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'flex';
           const spanDostavka = document.querySelector('.SpanDateDilvery');
           spanDostavka.innerHTML = '5–8 фев';
           if (allInputs[i].value === 185) {
@@ -1113,6 +1123,8 @@ for (let i = 0; i < allInputs.length; i++) {
         }
         if (allInputs[i].value < 185) {
           const spanDostavka = document.querySelector('.SpanDateDilvery');
+          const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+          BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
           spanDostavka.innerHTML = '5–6 фев';
           if (Number(allInputs[i].value) === 1) {
             for (let w = 0; w < secondLable.length; w++) {
@@ -1185,6 +1197,8 @@ for (let i = 0; i < allInputs.length; i++) {
         const costOneNoSkidka = Math.trunc(Number(localStorage.SecondPriceNonDiscount) / Number(localStorage.secondQuantitySum));
         allInputs[i].value = value;
         if (allInputs[i].value >= 185) {
+          const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+          BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'flex';
           const spanDostavka = document.querySelector('.SpanDateDilvery');
           spanDostavka.innerHTML = '5–8 фев';
           if (allInputs[i].value === 185) {
@@ -1210,6 +1224,8 @@ for (let i = 0; i < allInputs.length; i++) {
           blockNoneChange.style.display = 'flex';
         }
         if (allInputs[i].value < 185) {
+          const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
+          BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
           const spanDostavka = document.querySelector('.SpanDateDilvery');
           spanDostavka.innerHTML = '5–6 фев';
           if (Number(allInputs[i].value) === 1) {
@@ -1711,8 +1727,9 @@ mainCheckbox.addEventListener('click', async (e) => {
 
       if (secondKolvo < 184) {
         const BlockDeliveryImageMobile1 = document.querySelectorAll('#BlockDeliveryImageMobile1');
-        const BlockDisplayNoneChangeCheckbox1 = document.querySelector('.BlockSecondDeliveryTime');
+        const BlockDeliveryImageMobileNonVisibleMobilDelpoy = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
         BlockDisplayNoneChangeCheckbox1.style.display = 'none';
+        BlockDeliveryImageMobileNonVisibleMobilDelpoy.style.display = 'none';
         for (let q = 0; q < BlockDeliveryImageMobile1.length; q++) {
           BlockDeliveryImageMobile1[q].style.display = 'none';
         }
