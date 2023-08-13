@@ -8332,7 +8332,6 @@ legend {
     .InsideFirstBlockSecondContentBlock {
         display: flex;
         align-items: center;
-        width: 284px;
         gap: 11px;
         align-self: stretch;
         margin: -3px 0px 0px 0px;
@@ -8480,6 +8479,10 @@ legend {
         align-items: center;
         gap: 24px;
         margin: -1px 0px 0px 0px;
+    }
+
+    #BlockDeliveryImageMobile12 {
+        display: none;
     }
 
     .InsideAbsentIconsBlockFirst {
@@ -8883,6 +8886,10 @@ legend {
         gap: 8px;
         border-radius: 8px;
         background: var(--system-white, #FFF);
+    }
+
+    .buttonVectorUpSecond {
+        margin: 0px 36px 0px 0px;
     }
 
     .LastLabelImageDelivery {
@@ -9477,6 +9484,7 @@ legend {
     }
 
     .SpanObratnoDelivery {
+        width: 235px;
         color: var(--text-black, #000);
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 13px;
@@ -9488,9 +9496,9 @@ legend {
         flex-direction: column;
         align-items: flex-start;
         gap: 1px;
-        position: absolute;
-        right: 101px;
-        bottom: 11px;
+        position: relative;
+        right: 156px;
+        bottom: -10px;
     }
 
     .SpanBasplatnoTotal {

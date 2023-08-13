@@ -64,7 +64,7 @@ const firstLable = document.querySelectorAll('#LableFirstImageDelivery');
 const secondLable = document.querySelectorAll('#LabelSecondImageDelivery');
 const thirdLable = document.querySelectorAll('#LabelThirdImageDelivery');
 const lableDown = document.querySelectorAll('.LastLabelImageDelivery');
-const blockNoneChange = document.querySelectorAll('.blockNoneChange');
+const blockNoneChange = document.querySelector('.blockNoneChange');
 const spanButtonZakaz = document.querySelector('.TextButtonZakaz2');
 // const blocksDisabledCommon = document.querySelectorAll('.BlockSumContent');
 
@@ -421,9 +421,7 @@ for (let i = 0; i < allPlus.length; i++) {
             }
           }
         }
-        for (let x = 0; x < blockNoneChange.length; x++) {
-          blockNoneChange[x].style.display = 'flex';
-        }
+        blockNoneChange.style.display = 'flex';
       }
       if (num < 185) {
         const spanDostavka = document.querySelector('.SpanDateDilvery');
@@ -441,9 +439,7 @@ for (let i = 0; i < allPlus.length; i++) {
         for (let z = 0; z < spanAll.length; z++) {
           spanAll[z].innerHTML = num;
         }
-        for (let x = 0; x < blockNoneChange.length; x++) {
-          blockNoneChange[x].style.display = 'none';
-        }
+        blockNoneChange.style.display = 'none';
       }
       localStorage.secondQuantitySum = num;
       if (allMinus[i].hasAttribute('disabled')) {
@@ -775,9 +771,7 @@ for (let i = 0; i < allMinus.length; i++) {
             }
           }
         }
-        for (let x = 0; x < blockNoneChange.length; x++) {
-          blockNoneChange[x].style.display = 'flex';
-        }
+        blockNoneChange.style.display = 'flex';
       }
       if (num < 185) {
         const spanDostavka = document.querySelector('.SpanDateDilvery');
@@ -795,9 +789,7 @@ for (let i = 0; i < allMinus.length; i++) {
         for (let z = 0; z < spanAll.length; z++) {
           spanAll[z].innerHTML = num;
         }
-        for (let x = 0; x < blockNoneChange.length; x++) {
-          blockNoneChange[x].style.display = 'none';
-        }
+        blockNoneChange.style.display = 'none';
       }
       localStorage.secondQuantitySum = num;
       if (num === 1) {
@@ -1117,9 +1109,7 @@ for (let i = 0; i < allInputs.length; i++) {
               }
             }
           }
-          for (let x = 0; x < blockNoneChange.length; x++) {
-            blockNoneChange[x].style.display = 'flex';
-          }
+          blockNoneChange[x].style.display = 'flex';
         }
         if (allInputs[i].value < 185) {
           const spanDostavka = document.querySelector('.SpanDateDilvery');
@@ -1137,9 +1127,7 @@ for (let i = 0; i < allInputs.length; i++) {
           for (let z = 0; z < spanAll.length; z++) {
             spanAll[z].innerHTML = allInputs[i].value;
           }
-          for (let x = 0; x < blockNoneChange.length; x++) {
-            blockNoneChange[x].style.display = 'none';
-          }
+          blockNoneChange.style.display = 'none';
         }
         // цена без скидки
         const sumResultCost = Math.trunc(allInputs[i].value * costOne);
@@ -1219,9 +1207,7 @@ for (let i = 0; i < allInputs.length; i++) {
               secondLable[w].style.display = 'flex';
             }
           }
-          for (let x = 0; x < blockNoneChange.length; x++) {
-            blockNoneChange[x].style.display = 'flex';
-          }
+          blockNoneChange.style.display = 'flex';
         }
         if (allInputs[i].value < 185) {
           const spanDostavka = document.querySelector('.SpanDateDilvery');
@@ -1239,9 +1225,7 @@ for (let i = 0; i < allInputs.length; i++) {
           for (let z = 0; z < spanAll.length; z++) {
             spanAll[z].innerHTML = allInputs[i].value;
           }
-          for (let x = 0; x < blockNoneChange.length; x++) {
-            blockNoneChange[x].style.display = 'none';
-          }
+          blockNoneChange.style.display = 'none';
         }
         // цена без скидки
         const sumResultCost = Math.trunc(allInputs[i].value * costOne);
@@ -1476,14 +1460,14 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const imgFirst = document.querySelectorAll('#FirstImageDelivery');
         const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
         const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
+        if (secondCheckBox.checked) {
+          blockNoneChange.style.display = 'flex';
+        } else {
+          blockNoneChange.style.display = 'none';
+        }
         for (let z = 0; z < imgFirst.length; z++) {
-          if (secondCheckBox.checked) {
-            blockNoneChange[z].style.display = 'flex';
-          } else {
-            blockNoneChange[z].style.display = 'none';
-          }
           imgFirst[z].style.display = 'flex';
-          LableSecondImageDelivery[z].style.left = '68px';
+          // LableSecondImageDelivery[z].style.left = '68px';
           if (SpanNumberKolVo1 === 2) {
             LableFirstImageDelivery[z].style.visibility = 'visible';
           }
@@ -1506,13 +1490,13 @@ for (let i = 0; i < CheckBoxes.length; i++) {
       } else {
         const imgFirst = document.querySelectorAll('#FirstImageDelivery');
         const LableFirstImageDelivery = document.querySelectorAll('#LableFirstImageDelivery');
+        if (secondCheckBox.checked) {
+          blockNoneChange.style.display = 'flex';
+        } else {
+          blockNoneChange.style.display = 'none';
+        }
         for (let z = 0; z < imgFirst.length; z++) {
           imgFirst[z].style.display = 'none';
-          if (secondCheckBox.checked) {
-            blockNoneChange[z].style.display = 'flex';
-          } else {
-            blockNoneChange[z].style.display = 'none';
-          }
           LableFirstImageDelivery[z].style.visibility = 'hidden';
         }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
@@ -1541,12 +1525,12 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const imgSecond = document.querySelectorAll('#SecondImageDelivery');
         const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
         const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        const Section = document.querySelector('.Section');
+        if (SpanNumberKolVo2 > 184) {
+          blockNoneChange.style.display = 'flex';
+        }
         for (let z = 0; z < imgSecond.length; z++) {
           imgSecond[z].style.display = 'flex';
-          imgThird[z].style.margin = '-1px 1px 0px 0px';
-          if (SpanNumberKolVo2 > 184) {
-            blockNoneChange[z].style.display = 'flex';
-          }
           LableSecondImageDelivery[z].style.display = 'flex';
           LableSecondImageDelivery[z].style.visibility = 'visible';
         }
@@ -1569,9 +1553,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         const imgSecond = document.querySelectorAll('#SecondImageDelivery');
         const LableSecondImageDelivery = document.querySelectorAll('#LabelSecondImageDelivery');
         const imgThird = document.querySelectorAll('#ThirdImageDelivery');
+        blockNoneChange.style.display = 'none';
         for (let z = 0; z < imgSecond.length; z++) {
           imgThird[z].style.margin = '-1px 1px 0px -0px';
-          blockNoneChange[z].style.display = 'none';
           imgSecond[z].style.display = 'none';
           LableSecondImageDelivery[z].style.display = 'none';
           LableSecondImageDelivery[z].style.visibility = 'hidden';
@@ -1602,13 +1586,13 @@ for (let i = 0; i < CheckBoxes.length; i++) {
 
         const imgThird = document.querySelectorAll('#ThirdImageDelivery');
         const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
+        if (secondCheckBox.checked) {
+          blockNoneChange.style.display = 'flex';
+        } else {
+          blockNoneChange.style.display = 'none';
+        }
         for (let z = 0; z < imgThird.length; z++) {
           imgThird[z].style.display = 'flex';
-          if (secondCheckBox.checked) {
-            blockNoneChange[z].style.display = 'flex';
-          } else {
-            blockNoneChange[z].style.display = 'none';
-          }
           if (SpanNumberKolVo3 === 2) {
             LableThirdImageDelivery[z].style.visibility = 'visible';
           }
@@ -1631,13 +1615,13 @@ for (let i = 0; i < CheckBoxes.length; i++) {
       } else {
         const imgThird = document.querySelectorAll('#ThirdImageDelivery');
         const LableThirdImageDelivery = document.querySelectorAll('#LabelThirdImageDelivery');
+        if (secondCheckBox.checked) {
+          blockNoneChange.style.display = 'flex';
+        } else {
+          blockNoneChange.style.display = 'none';
+        }
         for (let z = 0; z < imgThird.length; z++) {
           imgThird[z].style.display = 'none';
-          if (secondCheckBox.checked) {
-            blockNoneChange[z].style.display = 'flex';
-          } else {
-            blockNoneChange[z].style.display = 'none';
-          }
           LableThirdImageDelivery[z].style.visibility = 'hidden';
         }
         localStorage.sumResultTotal -= Number(localStorage.thirdSum);
