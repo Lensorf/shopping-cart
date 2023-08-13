@@ -3257,9 +3257,14 @@ legend {
         position: relative;
     }
 
+    .galochkablock {
+        display: flex;
+    }
+
     .IconGalochka {
         width: 13px;
         height: 24px;
+        margin: 0px 8px 0px 0px;
     }
 
     .TextFooterTotal {
@@ -6528,12 +6533,18 @@ legend {
         position: relative;
     }
 
+    .galochkablock {
+        display: flex;
+    }
+
     .IconGalochka {
         width: 13px;
         height: 24px;
+        margin: 0px 8px 0px 0px;
     }
 
     .TextFooterTotal {
+        width: 220px;
         color: var(--text-black, #000);
         font-family: "SegoeUIRegular", sans-serif;
         font-size: 13px;
@@ -8752,6 +8763,10 @@ legend {
         margin: 1px 0px 0px 0px;
     }
 
+    .BlockDeliveryImageMobileNonVisibleMobilDelpoy {
+        display: none;
+    }
+
     .ImageDevileryCoomon {
         z-index: 0;
         margin: -1px 1px 0px 0px;
@@ -9274,7 +9289,7 @@ legend {
 
     .RightBlockResult {
         display: flex;
-        margin: -12px 0px 0px 0px;
+        margin: -10px 0px 0px 0px;
         width: calc(320px + (430 - 320) * ((100vw - 320px) / (1023 - 320)));
         padding: 8px 16px 0px 16px;
         flex-direction: column;
@@ -9644,15 +9659,22 @@ legend {
 
     .FooterTotalBlock {
         display: flex;
+        height: 32px;
         align-items: flex-start;
         gap: 8px;
         align-self: stretch;
         position: relative;
+        flex-direction: column;
+    }
+
+    .galochkablock {
+        display: flex;
     }
 
     .IconGalochka {
         width: 13px;
         height: 24px;
+        margin: 0px 8px 0px 0px;
     }
 
     .TextFooterTotal {
@@ -9668,9 +9690,9 @@ legend {
         height: 2px;
         stroke-width: 1px;
         stroke: var(--rulers-rulers, rgba(0, 0, 0, 0.10));
-        position: absolute;
-        bottom: 13px;
-        right: 98px; 
+        position: relative;
+        bottom: 31px;
+        right: -111px;
     }
 
     .DownLineTotalSecond {
@@ -9678,9 +9700,9 @@ legend {
         height: 2px;
         stroke-width: 1px;
         stroke: var(--rulers-rulers, rgba(0, 0, 0, 0.10));
-        position: absolute;
-        top: 34px;
-        right: 138px;    
+        position: relative;
+        top: -17px;
+        right: 0px; 
     }
 
     .DownLineTotalThird {
@@ -9688,9 +9710,9 @@ legend {
         height: 2px;
         stroke-width: 1px;
         stroke: var(--rulers-rulers, rgba(0, 0, 0, 0.10));
-        position: absolute;
-        bottom: -3px;
-        right: 74px;
+        position: relative;
+        bottom: 27px;
+        right: -143px;    
     }
 
     /* --- Конец правого блока секции --- */
@@ -9769,6 +9791,7 @@ legend {
 
     .MobileBlock {
         display: flex;
+        width: 100%;
         height: 56px;
         padding: 0px 13px;
         justify-content: space-between;
@@ -9779,12 +9802,33 @@ legend {
         box-shadow: 0px -0.5px 0px 0px rgb(0 0 0 / 30%);
         backdrop-filter: blur(2.5px);
         top: -16px;
+        margin: 0px 0px 0px 2px;
     }
 
     .IconMobileStyle {
         width: 28px;
         height: 28px;
-        margin: -2px 0px 0px 0px;
+        /* margin: -2px 0px 0px 0px; */
+    }
+
+    .IconMobileStyleHome {
+        margin: -2px 0px 0px -2px;
+    }
+
+    .IconMobileStyleSearch {
+        margin: -2px 0px 0px 2px;
+    }
+
+    #PinkMobileBasket {
+        margin: -2px 0px 0px -2px;
+    }
+
+    .IconMobileStyleHomeLike {
+        margin: -2px 0px 0px -4px;
+    }
+
+    .IconMobileStyleHomeProf {
+        margin: -1px -52px 0px 0px;
     }
 
     .LableMobileBasket {
@@ -9795,9 +9839,9 @@ legend {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        right: 140px;
-        top: 10px;
+        position: relative;
+        right: 129px;
+        top: -10px;
         border-radius: 16px;
         background: var(--system-red, #F55123);
     }
