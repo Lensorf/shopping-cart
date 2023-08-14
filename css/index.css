@@ -216,7 +216,7 @@ legend {
 
     .modalOplata {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
         z-index: 2; /* Сидеть на вершине */
@@ -233,10 +233,10 @@ legend {
 
     .modalDelivery {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
@@ -3495,7 +3495,7 @@ legend {
 
     .modalOplata {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
         z-index: 2; /* Сидеть на вершине */
@@ -3512,10 +3512,10 @@ legend {
 
     .modalDelivery {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
@@ -6783,7 +6783,7 @@ legend {
 
     .modalOplata {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
         z-index: 2; /* Сидеть на вершине */
@@ -6800,10 +6800,10 @@ legend {
 
     .modalDelivery {
         display: none; /* Скрыто по умолчанию */
-        position: absolute; /* Оставаться на месте */
+        position: fixed; /* Оставаться на месте */
         flex-direction: column;
         align-items: center;
-        z-index: 1; /* Сидеть на вершине */
+        z-index: 2; /* Сидеть на вершине */
         width: 100%;
         height: 200%;
         left: 50%;
