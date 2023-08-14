@@ -1494,8 +1494,14 @@ for (let i = 0; i < CheckBoxes.length; i++) {
             LableFirstImageDelivery[z].style.visibility = 'visible';
           }
         }
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo2 < 1 && SpanNumberKolVo3 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!firstCheckBox.checked && !secondCheckBox.checked && !thirdCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!firstCheckBox.checked && !thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
         localStorage.firstQuantitySum = SpanNumberKolVo1;
@@ -1532,8 +1538,11 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         if (SpanNumberKolVo2 < 1) {
           BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
-        if (SpanNumberKolVo2 < 1 && SpanNumberKolVo3 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+        if (!firstCheckBox.checked && !secondCheckBox.checked && !thirdCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!firstCheckBox.checked && !thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
@@ -1573,13 +1582,19 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           LableSecondImageDelivery[z].style.display = 'flex';
           LableSecondImageDelivery[z].style.visibility = 'visible';
         }
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo1 < 1 && SpanNumberKolVo3 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!secondCheckBox.checked && !firstCheckBox.checked && !thirdCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!secondCheckBox.checked && !thirdCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
         const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
         BlockDeliveryImageMobile12.style.display = 'flex';
-        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+        // const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         localStorage.secondQuantitySum = SpanNumberKolVo2;
         localStorage.secondSum = SpanResultSumNoMobile2;
@@ -1612,8 +1627,14 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         }
         const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
         BlockDeliveryImageMobile12.style.display = 'none';
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo1 < 1 && SpanNumberKolVo3 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!secondCheckBox.checked && !firstCheckBox.checked && !thirdCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!secondCheckBox.checked && !thirdCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         localStorage.sumResultTotal -= Number(localStorage.secondSum);
@@ -1658,8 +1679,17 @@ for (let i = 0; i < CheckBoxes.length; i++) {
             LableThirdImageDelivery[z].style.visibility = 'visible';
           }
         }
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo2 < 1 && SpanNumberKolVo1 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (SpanNumberKolVo1 < 1) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!thirdCheckBox.checked && !firstCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
+        if (!thirdCheckBox.checked && !secondCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
         localStorage.thirdQuantitySum = Number(SpanNumberKolVo3);
@@ -1692,8 +1722,14 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         if (SpanNumberKolVo2 < 1) {
           BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo2 < 1 && SpanNumberKolVo1 < 1) {
-          const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!thirdCheckBox.checked && !firstCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!thirdCheckBox.checked && !secondCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         for (let z = 0; z < imgThird.length; z++) {
@@ -1923,13 +1959,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         imgFirst[z].style.display = 'none';
         LableFirstImageDelivery[z].style.display = 'none';
       }
-      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceFirst.innerHTML?.split(' ')?.join(''));
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(localStorage.firstSum);
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(FirstPriceWithoutDiscount1.innerHTML?.split(' ')?.join(''));
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(localStorage.FirstPriceNonDiscount);
       SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
       SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(firstKolvo.value);
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(localStorage.firstQuantitySum);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       firstKolvo.value = 0;
@@ -1949,7 +1985,12 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      firstCheckBox.removeAttribute('cheked');
+      firstCheckBox.checked = true;
+
+      if (secondCheckBox.checked && thirdCheckBox.checked) {
+        mainCheckbox.checked = true;
+      }
+      firstCheckBox.removeAttribute('checked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo) === 0 && Number(firstKolvo.value) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
@@ -1994,9 +2035,6 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         imgSecond[k].style.display = 'none';
         LableSecondImageDelivery[k].style.display = 'none';
       }
-
-      secondCheckBox.checked = true;
-
       const SpanLabelIconBasket = document.querySelector('.SpanLabelIconBasket');
       const SpanLabelMobile = document.querySelector('.SpanLabelMobile');
       const SumMobile = Number(SpanLabelMobile.innerHTML) - 1;
@@ -2013,13 +2051,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       secondBlock.style.display = 'none';
       secondBlockDown.style.display = 'none';
 
-      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceSecond1.innerHTML?.split(' ')?.join(''));
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(localStorage.secondSum);
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(SecondPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(localStorage.SecondPriceNonDiscount);
       SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
       SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(secondKolvo.value);
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(localStorage.secondQuantitySum);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       secondKolvo.value = 0;
@@ -2041,7 +2079,12 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      CheckBoxes[i].removeAttribute('checked');
+      secondCheckBox.checked = true;
+
+      if (firstCheckBox.checked && thirdCheckBox.checked) {
+        mainCheckbox.checked = true;
+      }
+      secondCheckBox.removeAttribute('checked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
@@ -2090,13 +2133,13 @@ for (let i = 0; i < allButtonDelete.length; i++) {
       thirdBlock.style.display = 'none';
       thirdBlockDown.style.display = 'none';
 
-      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(onePieceThird1.innerHTML?.split(' ')?.join(''));
+      localStorage.sumResultTotal = Number(localStorage.sumResultTotal) - Number(localStorage.thirdSum);
       resultTotal.innerHTML = `${Number(localStorage.sumResultTotal)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(ThirdPriceWithoutDiscount1.innerHTML?.replace('сом', '')?.split(' ')?.join(''));
+      localStorage.sumNonDiscount = Number(localStorage.sumNonDiscount) - Number(localStorage.ThirdPriceNonDiscount);
       SumProduct.innerHTML = `${`${Number(localStorage.sumNonDiscount)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       localStorage.resultSumDiscount = `−${Number(localStorage.sumNonDiscount) - Number(localStorage.sumResultTotal)}`;
       SumDiscount.innerHTML = `${(localStorage.resultSumDiscount).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
-      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(thirdKolvo.value);
+      localStorage.allQuantity = Number(localStorage.allQuantity) - Number(localStorage.thirdQuantitySum);
       QuantityProduct.innerHTML = `${`${localStorage.allQuantity}`} товара`;
       spanButtonZakaz.innerHTML = `Оплатить ${(`${localStorage.sumResultTotal}`).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')} сом`;
       thirdKolvo.value = 0;
@@ -2117,7 +2160,12 @@ for (let i = 0; i < allButtonDelete.length; i++) {
         SpanLabelIconBasket.innerHTML = `${SumBasket}`;
       }
 
-      thirdCheckBox.removeAttribute('cheked');
+      thirdCheckBox.checked = true;
+
+      if (firstCheckBox.checked && secondCheckBox.checked) {
+        mainCheckbox.checked = true;
+      }
+      thirdCheckBox.removeAttribute('checked');
       if (Number(thirdKolvo.value) === 0 && Number(secondKolvo.value) === 0 && Number(firstKolvo.value) === 0) {
         const Section = document.querySelector('.Section');
         Section.style.height = `${Section.scrollHeight}px`;
