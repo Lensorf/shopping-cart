@@ -1504,6 +1504,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         if (!firstCheckBox.checked && !thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
+        if (!firstCheckBox.checked && !thirdCheckBox.hasAttribute('checked') && !secondCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
         localStorage.firstQuantitySum = SpanNumberKolVo1;
         localStorage.firstSum = SpanResultSumNoMobile1;
         localStorage.FirstPriceNonDiscount = SpanResultNonSkidka1Mobile;
@@ -1535,14 +1538,17 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           LableFirstImageDelivery[z].style.visibility = 'hidden';
         }
         const BlockDisplayNoneChangeCheckbox1 = document.querySelector('#BlockDisplayNoneChangeCheckbox1');
+        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (SpanNumberKolVo2 < 1) {
           BlockDisplayNoneChangeCheckbox1.style.display = 'none';
         }
-        const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
         if (!firstCheckBox.checked && !secondCheckBox.checked && !thirdCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         if (!firstCheckBox.checked && !thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!firstCheckBox.checked && !thirdCheckBox.hasAttribute('checked') && !secondCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         localStorage.sumResultTotal -= Number(localStorage.firstSum);
@@ -1592,6 +1598,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         if (!secondCheckBox.checked && !thirdCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
+        if (!secondCheckBox.checked && !thirdCheckBox.hasAttribute('checked') && !firstCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
         const BlockDeliveryImageMobile12 = document.querySelector('.BlockDeliveryImageMobileNonVisibleMobilDelpoy');
         BlockDeliveryImageMobile12.style.display = 'flex';
         // const BlockDisplayNoneChangeCheckbox = document.querySelector('.BlockDisplayNoneChangeCheckbox');
@@ -1635,6 +1644,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         if (!secondCheckBox.checked && !thirdCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!secondCheckBox.checked && !thirdCheckBox.hasAttribute('checked') && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         localStorage.sumResultTotal -= Number(localStorage.secondSum);
@@ -1692,6 +1704,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
         if (!thirdCheckBox.checked && !secondCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'flex';
         }
+        if (!thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked') && !firstCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'flex';
+        }
         localStorage.thirdQuantitySum = Number(SpanNumberKolVo3);
         localStorage.thirdSum = Number(onePieceThird3);
         localStorage.ThirdPriceNonDiscount = Number(ThirdPriceWithoutDiscount3);
@@ -1730,6 +1745,9 @@ for (let i = 0; i < CheckBoxes.length; i++) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         if (!thirdCheckBox.checked && !secondCheckBox.checked && !firstCheckBox.hasAttribute('checked')) {
+          BlockDisplayNoneChangeCheckbox.style.display = 'none';
+        }
+        if (!thirdCheckBox.checked && !secondCheckBox.hasAttribute('checked') && !firstCheckBox.hasAttribute('checked')) {
           BlockDisplayNoneChangeCheckbox.style.display = 'none';
         }
         for (let z = 0; z < imgThird.length; z++) {
