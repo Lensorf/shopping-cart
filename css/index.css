@@ -6694,7 +6694,7 @@ legend {
 
 }
 
-@media (min-width: 320px) and (max-width: 1023px) {
+@media (min-width: 0px) and (max-width: 1023px) {
 
     /* ------- Для задания ширины под макет ------- */
 
