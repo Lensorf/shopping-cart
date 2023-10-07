@@ -1102,7 +1102,7 @@ legend {
         top: 3px;
         width: 6px;
         height: 12px;
-        border: solid white;
+        border: solid #FFFFFF;
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -3082,7 +3082,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
         position: relative;
         margin: 1px 0px 0px 0px;
     }
@@ -3209,7 +3209,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
     }
 
     .BlockCheckBoxTotal {
@@ -4383,7 +4383,7 @@ legend {
         top: 3px;
         width: 6px;
         height: 12px;
-        border: solid white;
+        border: solid #FFFFFF;
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -6365,7 +6365,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
         position: relative;
         margin: 0px 0px 0px 0px;
     }
@@ -6492,7 +6492,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
     }
 
     .BlockCheckBoxTotal {
@@ -7347,11 +7347,11 @@ legend {
     .SpanLogo {
         flex-shrink: 0;
         color: var(--system-white, #FFF);
-        font-size: 26px;
+        font-size: 27px;
         font-family: "SegoeUISemiBold", sans-serif;
         line-height: 24px;
         font-variant: all-small-caps;
-        letter-spacing: calc(3.28px + (2.3 - 3.28) * ((100vw - 320px) / (1023 - 320)));
+        letter-spacing: calc(2.63px + (2.3 - 2.63) * ((100vw - 320px) / (1023 - 320)));
     }
 
     /* --- Exit Logo --- */
@@ -7529,7 +7529,7 @@ legend {
         top: 3px;
         width: 6px;
         height: 12px;
-        border: solid white;
+        border: solid #FFFFFF;
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -9510,7 +9510,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
         position: relative;    
     }
 
@@ -9634,7 +9634,7 @@ legend {
         gap: 8px;
         align-self: stretch;
         border-radius: 8px;
-        background: var(--background-smoky, #F6F6FA);
+        background: var(--background-smoky, #F0ECF4);
     }
 
     .BlockCheckBoxTotal {

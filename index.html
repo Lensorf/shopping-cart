@@ -723,7 +723,7 @@
                                                 <div class="BlockDostavkaPickUpPoint">
     
                                                     <div class="BlockCardDeliveryModal">
-                                                        <span class="spanDeliveryModal">Адреса пунктов выдачи</span>
+                                                        <span class="spanDeliveryModal">Мои адреса</span>
                                                     </div>
     
                                                     <div class="BlockCardDeliveryModal">
@@ -804,7 +804,7 @@
     
                                                 <div class="BlockDostavkaCourier">
                                                     <div class="BlockCardDeliveryModal">
-                                                        <span class="spanDeliveryModal">Мои адресы</span>
+                                                        <span class="spanDeliveryModal">Мои адреса</span>
                                                     </div>
         
                                                     <div class="BlockCardDeliveryModal">
@@ -1161,7 +1161,7 @@
                                     <label class="LabelPlaceHolder" for="InputPhone">Телефон</label>
 
                                     <div class="BlockInputsRecipient">
-                                        <input name="phone" class="InputsRecipient" id="InputPhone" type="text" placeholder="Укажите номер телефона" maxlength="30">
+                                        <input name="phone" class="InputsRecipient" id="InputPhone" type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" placeholder="Укажите номер телефона" maxlength="30">
                                         <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
                                     </div>
 
@@ -1174,7 +1174,7 @@
                                     <label class="LabelPlaceHolder" for="InputINN">ИНН</label>
 
                                     <div class="BlockInputsRecipient">
-                                        <input name="INN" class="InputsRecipient" id="InputINN" type="text" placeholder="Укажите ИНН" maxlength="14">
+                                        <input name="INN" class="InputsRecipient" id="InputINN" type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" placeholder="Укажите ИНН" maxlength="14">
                                         <img class="ImgLineDownInput2" src="public/icons/VectorDownLine.svg" alt="Line">
                                     </div>
 
